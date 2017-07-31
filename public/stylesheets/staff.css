@@ -1,0 +1,39 @@
+body{
+  background-color: #F5DEB3;
+}
+
+h1{
+  text-align: center;
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  font-family: verdana, Arial, Helvetica, sans-serif;
+  background: #A0522D;
+}
+
+.navigation{
+  width: 980px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+
+}
+.navigation ul li{
+  margin-right: 1em;
+  display:inline;
+
+}
+
+#content{
+  width: 920px;
+  min-height: 1000px;
+  padding: 0 30px;
+}
+
+
+footer{
+  height: 20px;
+  padding: 10px 20px;
+  background: #A0522D;
+
+}
