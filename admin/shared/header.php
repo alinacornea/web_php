@@ -1,4 +1,5 @@
 <?php
+start_session();
   if(!isset($page_title)) { $page_title = 'Admin menu'; }
 ?>
 <!doctype html>
@@ -7,7 +8,7 @@
 
 <head>
   <title>Vintage - <?php echo $page_title; ?> </title>
-  <link rel="stylesheet" media= "all" href = "<?php echo url_for('/stylesheets/staff.css'); ?>"/>
+  <link rel="stylesheet" media= "all" href = "<?php echo url_from_public("public/stylesheets/staff.css") ; ?> "/>
   <meta charset="utf-8">
 </head>
 
@@ -17,6 +18,6 @@
     </header>
     <navigation>
       <ul>
-        <li> <a href="<?php echo url_for('/staff/index.php'); ?>"> Menu </a> </li>
+        <li> <a href="<?php echo url_for_admin("staff/index.php") ; ?> "> Home </a> </li>
       </ul>
     </navigation>

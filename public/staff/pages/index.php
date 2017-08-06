@@ -14,7 +14,7 @@
     <br />
     <input type="submit" name="submit" value="SUBMIT" />
     <br />
-      <li> <a href="/web_php/public/staff/pages/create_account.php"> Are you new? Create an account here</a> </li>
+      <li> <a href="/web_store/admin/staff/pages/create_account.php"> Are you new? Create an account here</a> </li>
   </form>
 </div>
 </body>

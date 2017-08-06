@@ -1,4 +1,5 @@
-<?php require_once('../../../admin/initialize.php'); ?>
+<?php require_once('../../initialize.php'); ?>
+
 <?php
   $subjects = [
     ['id' => '1', 'price' => '1', 'available' => '1', 'menu_name' => 'Product1'],
@@ -10,7 +11,7 @@
 
 
 <?php $page_title = 'Producs'; ?>
-<?php include('../../../admin/shared/header.php'); ?>
+<?php include('../../shared/header.php'); ?>
 <div id= "content">
   <div class = "products listing">
   <h1> Products </h1>
@@ -49,4 +50,4 @@
 
 
 
-<?php include('../../../admin/shared/footer.php'); ?>
+<?php include('../../shared/footer.php'); ?>

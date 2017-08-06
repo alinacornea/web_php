@@ -1,0 +1,30 @@
+
+
+h2{
+  font-family: titania;
+  scr: url('/titania/Titania-Regular.ttf'), url('/titania/Titania-Outline.ttf'), url('/titania/Titania-Shadow.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.container{
+  padding: 20px;
+}
+input[type=text], input[type=password]{
+  width: 95%;
+  padding:12px 15px;
+  margin: 8px 0;
+  display:inline-block;
+  border: 3px solid #ccc;
+
+}
+.signupbtn{
+  padding: 14px 20px;
+  background-color: #BC8F8F;
+  color: white;
+  margin: 5px 0;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  padding: 15px 10px;
+  font-size: 15px;
+}

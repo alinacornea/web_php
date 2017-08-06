@@ -1,10 +1,20 @@
 <?php
-function url_for($script_path)
+function url_for_admin($script_path)
 {
   if ($script_path[0] != '/'){
     $script_path = "/" . $script_path;
   }
-  return WWW_ROOT . $script_path;
+  $path = WWW_ROOT . $script_path;
+  return $path;
+}
+
+function url_from_public($script_path)
+{
+  if ($script_path[0] != '/'){
+    $script_path = "/" . $script_path;
+  }
+  $path = WWW_PUBLIC . $script_path;
+  return $path;
 }
 
 
