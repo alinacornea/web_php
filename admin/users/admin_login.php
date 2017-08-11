@@ -1,10 +1,9 @@
-<?php require_once('../../initialize.php'); ?>
-
-<?php include('../../shared/header.php'); ?>
+<?php require_once('../../shared/initialize.php');?>
+<?php include('../headers/header.php'); ?>
 
 <html>
 <title>Log in </title>
-<link rel="stylesheet" media= "all" href = "<?php echo url_from_public("public/stylesheets/login.css") ; ?> "/>
+<link rel="stylesheet" media= "all" href = "../style_admin/login.css"/>
 <body>
   <div id="content">
   <p1>Admin account: </p1> <br/>
@@ -20,4 +19,4 @@
 </body>
 </html>
 
-<?php include('../../shared/footer.php'); ?>
+<?php include('../headers/footer.php'); ?>

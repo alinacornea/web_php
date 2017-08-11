@@ -1,10 +1,10 @@
-<?php require_once('../../initialize.php'); ?>
+<?php require_once('../../shared/initialize.php'); ?>
 
-<?php include('../../shared/header.php'); ?>
+<?php include('../headers/header.php'); ?>
 
 <html>
 <title>Create_account</title>
-<link rel="stylesheet" media= "all" href ="<?php echo url_from_public("public/stylesheets/create_account.css") ; ?> "/>
+<link rel="stylesheet" media= "all" href ="../style_admin/create_delete_admin.css"/>
 <body>
   <h2> Create account form: </h2>
     <form action="action.php"style="border:2px solid #ccc" method="post">
@@ -28,4 +28,4 @@
 </body>
 </html>
 
-<?php include('../../shared/footer.php'); ?>
+<?php include('../headers/footer.php'); ?>

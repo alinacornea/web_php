@@ -1,0 +1,115 @@
+body{
+
+
+
+  background-repeat: repeat;
+  background-image: url(../../public/resources/bg5.jpg);
+
+
+
+
+}
+
+h1{
+  text-align: center;
+  margin: 0 0 50px 0;
+  font-size: 50px;
+  font-family: "Book Antiqua", Palatino, serif;
+
+}
+
+.navigation{
+  width: 980px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+
+}
+
+.navigation ul {
+  width: 980px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.navigation ul li{
+  margin-right: 1em;
+  display:inline;
+
+}
+
+.products{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.actions {
+  margin-bottom: 1em;
+}
+
+
+#content{
+
+  min-height: 1000px;
+
+}
+
+
+/* Lists */
+
+table {
+  width: 700px;
+
+  border-collapse: collapse;
+  border-radius: 20px;
+  vertical-align: top;
+}
+
+table.list {
+  width: 100%;
+}
+
+table.list tr td {
+padding: 20 20 20 20;
+  border: 1px solid #999999;
+}
+
+table.list tr th {
+  padding: 20 20 20 20;
+  border: 1px solid #0055DD;
+  background: #0055DD;
+  color: white;
+  text-align: left;
+}
+table.edittable{
+  padding: 20 20 20 20;
+  border: 1px solid #0055DD;
+  background: #0055DD;
+  color: white;
+  text-align: left;
+}
+
+
+#operations {
+  clear: both;
+  margin: 1em 0 1em 75px;
+}
+
+/* Errors */
+
+.errors {
+  display: inline-block;
+  border: 2px solid red;
+  color: red;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.errors ul {
+  margin-bottom: 0;
+  padding-left: 1em;
+}

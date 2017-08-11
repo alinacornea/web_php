@@ -1,7 +1,8 @@
 <?php
 session_start();
-require_once('../../initialize.php');
+require_once('../../shared/initialize.php');
 $login = $_POST['login'];
+$_SESSION['login'] = $login;
 $pass = $_POST['passwd'];
 $email = $_POST['email'];
 
@@ -22,7 +23,7 @@ if ($_POST['submit'] === "Sign Up")
         if ($value['login'] == $login || $value['email'] == $email)
         {
           $msg = "This user already exists, please enter a different user!";
-          echo "<script> alert('$msg');location.href = 'http://localhost:8080/alcornea2/web_store/admin/staff/pages/create_account.php?msg=$msg'; </script>";
+          echo "<script> alert('$msg');location.href = 'http://localhost:8080/ecommerce/admin/users/create_account.php?msg=$msg'; </script>";
           return ;
         }
       }
@@ -31,11 +32,11 @@ if ($_POST['submit'] === "Sign Up")
     $convert = serialize($unserialize);
     file_put_contents("private/passwd", $convert);
     $msg = "Your login and password was created!";
-    echo "<script> alert('$msg'); location.href = 'http://localhost:8080/alcornea2/web_store/admin/staff/index.php?msg=$msg'; </script>";
+    echo "<script> alert('$msg'); location.href = 'http://localhost:8080/ecommerce/public/index.php?msg=$msg'; </script>";
     die();
 }
   else {
     $msg = "Submit your login and password!";
-    echo "<script> alert('$msg');location.href = 'http://localhost:8080/alcornea2/web_store/admin/staff/pages/create_account.php?msg=$msg'; </script>";
+    echo "<script> alert('$msg');location.href = 'http://localhost:8080/ecommerce/admin/users/create_account.php?msg=$msg'; </script>";
   }
 ?>
