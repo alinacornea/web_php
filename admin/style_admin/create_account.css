@@ -1,30 +1,35 @@
-
-
 h2{
-  font-family: titania;
-  scr: url('/titania/Titania-Regular.ttf'), url('/titania/Titania-Outline.ttf'), url('/titania/Titania-Shadow.ttf');
-  font-weight: normal;
-  font-style: normal;
+  font-family:'American Typewriter';
 }
 .container{
   padding: 20px;
 }
+
+#board{
+   border:4px solid #ccc;
+   background-color:#C0C0C0;
+}
+
 input[type=text], input[type=password]{
   width: 95%;
   padding:14px 15px;
   margin: 7px 0;
   display:inline-block;
   border: 3px solid #ccc;
-
 }
+
+input[type=checkbox]{
+  width:23px;
+  height:20px;
+}
+
 .signupbtn{
   padding: 14px 15px;
-  background-color: #BC8F8F;
-  color: white;
+  background-color: #778899;
+  font-size:25px;
+  color: black;
   margin: 7px 0;
   border: none;
   width: 100%;
   cursor: pointer;
-}
-
 }
