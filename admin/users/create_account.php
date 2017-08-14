@@ -4,10 +4,10 @@
 
 <html>
 <title>Create_account</title>
-<link rel="stylesheet" media= "all" href ="../style_admin/create_delete_admin.css"/>
+<link rel="stylesheet" media= "all" href ="../style_admin/create_account.css"/>
 <body>
   <h2> Create account form: </h2>
-    <form action="action.php"style="border:2px solid #ccc" method="post">
+    <form id = "board" action="action.php" method="post">
   <div class="container">
     <label><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" value= "" required />

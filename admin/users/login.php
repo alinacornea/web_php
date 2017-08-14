@@ -36,7 +36,7 @@ if (isset($_POST['login']))
   }
   else
   {
-      $_SESSION['login'] = "";
+      // $_SESSION['login'] = "";
       $msg = "Incorect login or password, try again!";
       echo "<script> alert('$msg');location.href = 'http://localhost:8080/ecommerce/admin/users/login.php'; </script>";
   }
@@ -54,7 +54,7 @@ if (isset($_POST['login']))
     <br />
     <input type="submit" name="submit" value="SUBMIT" />
     <br />
-      <li> <a href="/ecommerce/admin/users/create_account.php"><b> Are you new? Create an account here</b></a> </li>
+      <li> <a href="/ecommerce/admin/users/create_account.php"><b style="font-size:23px;color:blue;background-color:white;"> Are you new? Create an account here</b></a> </li>
   </form>
 </div>
 </body>

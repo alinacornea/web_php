@@ -6,7 +6,7 @@
 <link rel="stylesheet" media= "all" href = "../style_admin/login.css"/>
 <body>
   <div id="content">
-  <p1>Admin account: </p1> <br/>
+  <p1 style="font-size:30px;">Admin account: </p1> <br/>
   <form action = "check_admin.php" method="post">
     <input type= "login" name="login" placeholder = "LOGIN" value="<?php echo $_SESSION['login']; ?>" />
     <br />
@@ -19,4 +19,4 @@
 </body>
 </html>
 
-<?php include('../headers/footer.php'); ?>
+<?php include('../headers/admin_footer.php'); ?>

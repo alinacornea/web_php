@@ -6,8 +6,8 @@
   <div id="content">
     <div id="main-menu">
       <ul>
-        <li> <a href="/ecommerce/admin/subjects/subjects.php"> Manage items </a>
-        <li> <a href="/ecommerce/admin/users/manage_users.php"> Manage users </a>
+        <li> <a id="items" href="/ecommerce/admin/subjects/subjects.php"> Manage items </a>
+        <li> <a id="items" href="/ecommerce/admin/users/manage_users.php"> Manage users </a>
         </li>
       </ul>
     </div>
@@ -15,4 +15,4 @@
 </body>
 </html>
 
-<?php include('../headers/footer.php'); ?>
+<?php include('../headers/admin_footer.php'); ?>

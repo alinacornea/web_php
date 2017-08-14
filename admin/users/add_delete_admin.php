@@ -3,9 +3,10 @@ session_start();
 require_once('../../shared/initialize.php');
 $login = $_POST['login'];
 $pass = $_POST['passwd'];
+$email = $_POST['email'];
 
 $_SESSION['login'] = $login;
-if ($_POST['submit'] === "Add")
+if ($_POST['submit'] === "Add Admin")
 {
 		$hash = hash('whirlpool', $pass);
 		if (!file_exists("private/"))
@@ -33,7 +34,7 @@ if ($_POST['submit'] === "Add")
     $msg = $login.", you are now an admin!";
     echo "<script> alert('$msg'); location.href='http://localhost:8080/ecommerce/admin/users/admin_page.php'; </script>";
 }
-else if ($_POST['submit'] === "Delete")
+else if ($_POST['submit'] === "Delete User")
 {
 	$did = false;
 	$hash = hash('whirlpool', $pass);
@@ -41,7 +42,7 @@ else if ($_POST['submit'] === "Delete")
 	$i = 0;
 	foreach($check as $value)
 	{
-		if ($value['login'] === $login && $value['passwd'] === $hash)
+		if ($value['login'] === $login && $value['passwd'] === $hash && $value['email'] === $email)
 		{
 				unset($check[$i]['email']);
 				unset($check[$i]['login']);
@@ -64,4 +65,5 @@ else if ($_POST['submit'] === "Delete")
 		echo "<script> alert('$msg'); location.href='http://localhost:8080/ecommerce/admin/users/manage_users.php'; </script>";
 	}
 }
+else if ($_POST['submit'] ===)
 ?>
