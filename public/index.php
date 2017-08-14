@@ -7,15 +7,15 @@
 <head>
   <meta charset="utf-8">
   <title>Vintage - store </title>
-  <link rel="icon" href="images/favicon.png"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet"
-     href="https://fonts.googleapis.com/css?family=Tangerine">
+  <link rel="icon" href="images/rose.png"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+  <link rel="stylesheet" href="front_style/home_style.css">
 </head>
 
 <body>
     <header>
       <h1>
+        
         <a title="Home"href="<?php echo ("http://localhost:8080/ecommerce/public/index.php?login=$login") ;?>"> <img id="home" src="images/home.png" alt="Home"></a>
         Vintage Store
         <a title="Cart" href="buy_product.php"> <img id="cart" src="images/cart.png" alt="Cart"></a>
@@ -23,45 +23,6 @@
         <a title="Logout" href="../admin/users/logout.php"><img id="logout" src="images/logout.png" alt="Logout"></a>
         <a title="Login" href="../admin/users/login.php"> <img id="login"src="images/login.png" alt="Login"></a>
       </h1>
-   <style>
-     h1 {
-       text-align: center;
-       margin: 0 0 10px 0;
-       background: #FFDAB9;
-       font-family: 'Tangerine', serif;
-       font-size: 60px;
-     }
-     #home{
-      float: left;
-      padding: 5px;
-      width:50px;
-      height:50px;
-     }
-     #cart{
-       float: right;
-       padding: 10px;
-       width:40px;
-       height:40px;
-     }
-     #admin{
-       float: right;
-       padding: 10px;
-       width:40px;
-       height:40px;
-     }
-     #logout{
-       float: right;
-       padding: 10px;
-       width:40px;
-       height:40px;
-     }
-     #login{
-       float: right;
-       padding: 10px;
-       width:40px;
-       height:40px;
-     }
-   </style>
     </header>
 
 <div id="content">

@@ -65,5 +65,8 @@ else if ($_POST['submit'] === "Delete User")
 		echo "<script> alert('$msg'); location.href='http://localhost:8080/ecommerce/admin/users/manage_users.php'; </script>";
 	}
 }
-else if ($_POST['submit'] ===)
+else if ($_POST['submit'] === "Modify Admin")
+{
+	
+}
 ?>
