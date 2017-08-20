@@ -50,12 +50,23 @@ include ("../../shared/initialize.php");
     <td><input type= "text" style ="height:25px" name = "product_price" size = "15"required/></td>
   </tr>
   <tr>
-    <td align = "right"><b>Product Quantity:</b> </td>
-    <td><input type = "text" style ="height:25px" name = "product_quantity" size = "15"/></td>
+    <td align = "right"><b>Product Year:</b> </td>
+    <td>
+      <select name="product_year" id="year" style="height:30px; width:70px;"> </select>
+        <script>
+          var start = 1900;
+          var end = new Date().getFullYear();
+          var options = "";
+          for(var year = start ; year <=end; year++){
+            options += "<option>"+ year +"</option>";
+          }
+          document.getElementById("year").innerHTML = options;
+        </script>
+    </td>
   </tr>
   <tr>
-    <td align = "right"><b>Product Year:</b> </td>
-    <td><input type = "text" style ="height:25px" name = "product_year" size = "15"/></td>
+    <td align = "right"><b>Product Quantity:</b> </td>
+    <td><input type = "text" style ="height:25px" name = "product_quantity" size = "15"/></td>
   </tr>
   <tr>
 		<td align = "right"><b>Product Active:</b> </td>
@@ -83,8 +94,8 @@ include ("../../shared/initialize.php");
     $product_year = $_POST['product_year'];
     $product_active = $_POST['product_active'];
     $table = "Products";
-		$insert_product = "INSERT INTO $table(title, category, description, img_path, price, quantity, year, availability)
-		values('$product_title', '$product_cat', '$product_desc', '$product_image', '$product_price', '$product_quantity', '$product_year','$product_active')";
+		$insert_product = "INSERT INTO $table(title, category, description, img_path, price, year, quantity, availability)
+		values('$product_title', '$product_cat', '$product_desc', '$product_image', '$product_price', '$product_year','$product_quantity', '$product_active')";
     $insert_pro = mysqli_query($conn, $insert_product);
     if ($insert_pro){
       echo "<script>alert('Product has been inserted!')</script>";

@@ -58,9 +58,11 @@ $sql = "CREATE TABLE IF NOT EXISTS Categories(
   cat_id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
   cat_title VARCHAR(50) NOT NULL
 )";
+$check = "ALTER TABLE Categories ADD UNIQUE INDEX(cat_title)";
+mysqli_query($conn, $check);
+$insert_cat = "INSERT IGNORE INTO Categories(cat_title)
+values('Art'), ('Accesories'), ('Books'), ('Decorative'), ('Furniture'), ('Rugs'), ('Timepieces'), ('WallDecor')";
 
-$insert_cat = "ALTER TABLE Categories ADD UNIQUE INDEX(cat_title)
-INSERT IGNORE INTO Categories(cat_title) values('Art'), ('Accesories'), ('Books'), ('Decorative'), ('Furniture'), ('Rugs'), ('Timepieces'), ('WallDecor')";
 $insert_pro = mysqli_query($conn, $insert_cat);
 
 echo "<br  />";
