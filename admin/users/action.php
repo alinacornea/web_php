@@ -6,7 +6,7 @@ $_SESSION['login'] = $login;
 $pass = $_POST['passwd'];
 $email = $_POST['email'];
 
-if ($_POST['submit'] === "Sign Up")
+if ($_POST['submit'] === "Create an account")
 {
 		$hash = hash('whirlpool', $pass);
 		if (!file_exists("private"))

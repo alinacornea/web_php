@@ -22,7 +22,7 @@
     <input type="password" placeholder="Repeat Password" name="pssswd-repeat" value="" required/>
     <input type="checkbox" checked="checked"> Remember me
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-    <input type="submit" class="signupbtn"  name="submit" value="Sign Up"/>
+    <input type="submit" class="signupbtn"  name="submit" value="Create an account"/>
   </div>
 </form>
 </body>
