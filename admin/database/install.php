@@ -1,7 +1,8 @@
+<?php require_once('../../shared/initialize.php');?>
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "password";
+$password = "root";
 $dbname = "web_store";
 
 // Check connection
@@ -10,7 +11,7 @@ echo "<br/>";
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-echo "Connected successfully";
+echo '<p1 style="color: white;">Connected successfully</p1>';
 echo "<br/>";
 
 // DataBase creation
@@ -18,9 +19,9 @@ echo "<br/>";
 $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
 echo "<br/>";
 if (mysqli_query($conn, $sql)) {
-    echo "Database created successfully";
+    echo '<p1 style="color: white;">Database created successfully</p1>';
 } else {
-    echo "Error creating database: " . mysqli_error($conn);
+    echo '<p1 style="color: white;">Error creating database: </p1>' . mysqli_error($conn);
 }
 echo "<br/>";
 
@@ -34,22 +35,42 @@ echo "<br/>";
 // Set Products Table
 $sql = "CREATE TABLE IF NOT EXISTS Products (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
-price INT(6) NOT NULL,
-name VARCHAR(50) NOT NULL,
+title VARCHAR(50) NOT NULL,
+category VARCHAR(50) NOT NULL,
 description TEXT NOT NULL,
 img_path CHAR(255) NOT NULL,
-quantity INT(6) NOT NULL,
+price INT(6) NOT NULL,
+quantity INT,
+year INT,
 availability INT(1)
 )";
 
 // Check table creation
 echo "<br  />";
 if (mysqli_query($conn, $sql)) {
-    echo "Table Products created successfully";
+    echo '<p1 style="color: white;">Table Products created successfully</p1>';
 } else {
     echo "Error creating table: " . mysqli_error($conn);
 }
 echo "<br  />";
+
+$sql = "CREATE TABLE IF NOT EXISTS Categories(
+  cat_id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  cat_title VARCHAR(50) NOT NULL
+)";
+
+$insert_cat = "ALTER TABLE Categories ADD UNIQUE INDEX(cat_title)
+INSERT IGNORE INTO Categories(cat_title) values('Art'), ('Accesories'), ('Books'), ('Decorative'), ('Furniture'), ('Rugs'), ('Timepieces'), ('WallDecor')";
+$insert_pro = mysqli_query($conn, $insert_cat);
+
+echo "<br  />";
+if (mysqli_query($conn, $sql)) {
+    echo "Table CATEGORIES created successfully";
+} else {
+    echo "Error creating table: " . mysqli_error($conn);
+}
+echo "<br  />";
+
 
 // // Set User Table
 // $sql = "CREATE TABLE IF NOT EXISTS Users (
@@ -65,12 +86,12 @@ echo "<br  />";
 // )";
 
 // Check table creation
-echo "<br  />";
-if (mysqli_query($conn, $sql)) {
-    echo "Table Products created successfully";
-} else {
-    echo "Error creating table: " . mysqli_error($conn);
-}
-echo "<br  />";
+// echo "<br  />";
+// if (mysqli_query($conn, $sql)) {
+//     echo "Table Products created successfully";
+// } else {
+//     echo "Error creating table: " . mysqli_error($conn);
+// }
+// echo "<br  />";
 
 ?>
