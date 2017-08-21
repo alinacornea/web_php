@@ -12,7 +12,7 @@
 			<div id = "right">
 			<h2 style = "text-align: center; color: white; font-family: Georgia"> Manage Content: </h2>
 				<a href= "index.php?add_product"> Insert New Product</a></br>
-				<a href= "index.php?view_product"> View All Product</a></br>
+				<a href= "index.php?view_all"> View All Product</a></br>
 				<a href= "index.php?insert_cat"> Insert New Category</a></br>
 				<a href= "index.php?view_cats"> View All Categories</a></br>
 				<a href= "index.php?view_customers"> View Customers</a></br>
@@ -21,10 +21,10 @@
 				<?php
 				if (isset($_GET['add_product']))
 					include("add_product.php");
-				if (isset($_GET['view_product']))
-					include("view_product.php");
-				if (isset($_GET['edit_pro']))
-					include ("edit_pro.php");
+				if (isset($_GET['view_all']))
+					include("view_all.php");
+				if (isset($_GET['edit_product']))
+					include ("edit_product.php");
 				if (isset($_GET['insert_cat']))
 					include ("insert_cat.php");
 				if (isset($_GET['view_cats']))
