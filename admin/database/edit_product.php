@@ -1,3 +1,4 @@
+<div style= "overflow-x:auto;">
 <link rel="stylesheet" href="http://localhost:8080/ecommerce/admin/style_admin/view.css">
 <table>
   <tr align = "center">
@@ -17,18 +18,18 @@
   <?php
     include ("../../shared/initialize.php");
     $id = $_GET['edit_product'];
-    $get_pro = "select * from Products where id=$id";
+    $get_pro = "SELECT * FROM `Products` WHERE `id`='{$id}'";
     $run_pro = mysqli_query($conn, $get_pro);
     $row_pro = mysqli_fetch_array($run_pro);
     $pro_title = $row_pro['title'];
     $pro_cat = $row_pro['category'];
     $pro_desc = $row_pro['description'];
-    $img = $row_pro['img_path'];
+    $pro_img = $row_pro['img_path'];
     $pro_price = $row_pro['price'];
     $pro_year = $row_pro['year'];
     $pro_quantity = $row_pro['quantity'];
   ?>
-  <form name="form" width="100%" method="post" action="edit_product.php?id=<?php echo $id; ?>">
+  <form action="edit_product.php?id=<?php echo $id; ?>" method="post" width="100%" enctype="multipart/form-data">
   <tr id="info">
     <td><?php echo $id;?></td>
     <td align="center"><input type="text" name="title"value="<?php echo $pro_title;?>"></td>
@@ -37,7 +38,6 @@
 			<option>Select a Category</option>
 			<?php
 				$get_cat = "SELECT * from Categories";
-
 				$run_cat = mysqli_query($conn, $get_cat);
 				while($row_cat = mysqli_fetch_array($run_cat))
 				{
@@ -48,12 +48,11 @@
 			 ?>
 		</select></td>
     <td id="desc"><input type="text" name="description"value="<?php echo $pro_desc;?>"></td>
-    <td><input type="file" name="image"/>  <img src = "product_images/<?php echo $img;?>"width= "80" height = "80"/>
-    </td>
+    <td><input type="file" name="img_path"> <img src = "product_images/<?php echo $pro_img;?>"width= "80" height = "50"/></td>
     <td><input type="text" name="price"value="<?php echo $pro_price;?>"></td>
     <td><input type="text" name="year"value="<?php echo $pro_year;?>"></td>
     <td><input type="text" name="quantity"value="<?php echo $pro_quantity;?>"></td>
-    <td> <input type="submit" name="update_post" value="Update Now"/></td>
+    <td><input type="submit" name="update_post" value="Update Now"/></td>
   </tr>
 </form>
 </table>
@@ -66,19 +65,18 @@
 		$product_title = $_POST['title'];
 		$product_cat = $_POST['category'];
     $product_desc = $_POST['description'];
-    $img_path = $_FILES['image']['name'];
-    $product_image_tmp = $_FILES['image']['tmp_name'];
-    move_uploaded_file($product_image_tmp, "product_images/$img_path");
-    print($img_path);
+    $product_image = $_FILES['img_path']['name'];
+    $product_image_tmp = $_FILES['img_path']['tmp_name'];
+    move_uploaded_file($product_image_tmp, "product_images/$product_image");
     $product_price = $_POST['price'];
 		$product_quantity = $_POST['quantity'];
     $product_year= $_POST['year'];
-		$update_product = "UPDATE Products SET title = '$product_title',category = '$product_cat', description = '$product_desc',
-    img_path = '$img_path', price = '$product_price', year = '$product_year', quantity = '$product_quantity' WHERE id=$update_id";
+    $table = 'Products';
+		$update_product = "UPDATE $table SET title = '$product_title',category = '$product_cat', description = '$product_desc', img_path='$product_image',
+    price = '$product_price', year = '$product_year', quantity = '$product_quantity' WHERE id=$update_id";
     $update_pro = mysqli_query($conn, $update_product);
     if ($update_pro){
-      $msg = "Product has been updated!";
-      echo "<script>alert('$msg');location.href = 'http://localhost:8080/ecommerce/admin/database/index.php?view_all'</script>";
+      echo "<script> location.href = 'http://localhost:8080/ecommerce/admin/database/index.php?view_all'</script>";
       return ;
     }
     else {
