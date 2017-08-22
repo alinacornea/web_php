@@ -1,5 +1,3 @@
-
-<div style= "overflow-x:auto;">
 <link rel="stylesheet" href="http://localhost:8080/ecommerce/admin/style_admin/view.css">
 <table>
   <tr align = "center">
@@ -18,24 +16,21 @@
   </tr>
   <?php
     include ("../../shared/initialize.php");
-    $get_pro = "select * from Products";
+    $id = $_GET['edit_product'];
+    $get_pro = "select * from Products where id=$id";
     $run_pro = mysqli_query($conn, $get_pro);
-    $i = 0;
-    while ($row_pro = mysqli_fetch_array($run_pro))
-    {
-      $pro_id = $row_pro['id'];
-      $pro_title = $row_pro['title'];
-      $pro_cat = $row_pro['category'];
-      $pro_desc = $row_pro['description'];
-      $product_image = $row_pro['img_path'];
-      $pro_price = $row_pro['price'];
-      $pro_year = $row_pro['year'];
-      $pro_quantity = $row_pro['quantity'];
-      $i++;
+    $row_pro = mysqli_fetch_array($run_pro);
+    $pro_title = $row_pro['title'];
+    $pro_cat = $row_pro['category'];
+    $pro_desc = $row_pro['description'];
+    $img = $row_pro['img_path'];
+    $pro_price = $row_pro['price'];
+    $pro_year = $row_pro['year'];
+    $pro_quantity = $row_pro['quantity'];
   ?>
-  <form name="form" method="post" action="edit_product.php?id=<?php echo $pro_id; ?>">
+  <form name="form" width="100%" method="post" action="edit_product.php?id=<?php echo $id; ?>">
   <tr id="info">
-    <td><?php echo $i;?></td>
+    <td><?php echo $id;?></td>
     <td align="center"><input type="text" name="title"value="<?php echo $pro_title;?>"></td>
     <td><input type="text" name="category"value="<?php echo $pro_cat;?>">
       <select name= "category">
@@ -53,8 +48,7 @@
 			 ?>
 		</select></td>
     <td id="desc"><input type="text" name="description"value="<?php echo $pro_desc;?>"></td>
-    <td><img src = "product_images/<?php echo $product_image;?>"width= "80" height = "80"/>
-    <input type="file" name="img_path"/>
+    <td><input type="file" name="image"/>  <img src = "product_images/<?php echo $img;?>"width= "80" height = "80"/>
     </td>
     <td><input type="text" name="price"value="<?php echo $pro_price;?>"></td>
     <td><input type="text" name="year"value="<?php echo $pro_year;?>"></td>
@@ -62,7 +56,6 @@
     <td> <input type="submit" name="update_post" value="Update Now"/></td>
   </tr>
 </form>
-<?php } ?>
 </table>
 </div>
 
@@ -73,18 +66,19 @@
 		$product_title = $_POST['title'];
 		$product_cat = $_POST['category'];
     $product_desc = $_POST['description'];
-    $product_image = $_FILES['img_path']['name'];
-    $product_image_tmp = $_FILES['img_path']['tmp_name'];
-    move_uploaded_file($product_image_tmp, "product_images/$product_image");
+    $img_path = $_FILES['image']['name'];
+    $product_image_tmp = $_FILES['image']['tmp_name'];
+    move_uploaded_file($product_image_tmp, "product_images/$img_path");
+    print($img_path);
     $product_price = $_POST['price'];
 		$product_quantity = $_POST['quantity'];
     $product_year= $_POST['year'];
 		$update_product = "UPDATE Products SET title = '$product_title',category = '$product_cat', description = '$product_desc',
-    img_path = '$product_image', price = '$product_price', year = '$product_year', quantity = '$product_quantity' WHERE id=$update_id";
+    img_path = '$img_path', price = '$product_price', year = '$product_year', quantity = '$product_quantity' WHERE id=$update_id";
     $update_pro = mysqli_query($conn, $update_product);
     if ($update_pro){
       $msg = "Product has been updated!";
-      echo "<script>alert('$msg');location.href = 'http://localhost:8080/ecommerce/admin/database/index.php?edit_product'</script>";
+      echo "<script>alert('$msg');location.href = 'http://localhost:8080/ecommerce/admin/database/index.php?view_all'</script>";
       return ;
     }
     else {
