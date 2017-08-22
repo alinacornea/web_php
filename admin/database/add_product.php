@@ -10,7 +10,7 @@ include ("../../shared/initialize.php");
 </head>
 <body>
 	<form action = "add_product.php" method = "post" enctype = "multipart/form-data">
-	<table align = "center" width = "827" height = "800" border = "5" bgcolor = "grey">
+	<table align = "center" width = "927" height = "700" border = "5" bgcolor = "grey">
 	<tr align = "center">
 		<td colspan = "7">
 			<h2>Insert New Product Here</h2>
@@ -18,7 +18,7 @@ include ("../../shared/initialize.php");
 	</tr>
 	<tr>
 		<td align = "right"><b>Product Title:</b></td>
-		<td><input type= "text" style ="height:25px" name = "title" size = "50" required/></td>
+		<td><input type= "text" style ="height:25px" name = "title" size = "50" placeholder="insert title"required/></td>
 	</tr>
 	<tr>
 		<td align = "right"><b>Product Category:</b> </td>
@@ -39,15 +39,15 @@ include ("../../shared/initialize.php");
 	</tr>
   <tr>
     <td align = "right"><b>Product Description:</b> </td>
-    <td><textarea name = "description" colls = "20" rows = "8"></textarea></td>
+    <td><textarea name = "description"></textarea></td>
   </tr>
   <tr>
     <td align = "right"><b>Product Image:</b> </td>
-    <td><input type= "file" name = "img_path"/></td>
+    <td><input type="file" name="img_path"/></td>
     </tr>
   <tr>
     <td align = "right"><b>Product Price:</b> </td>
-    <td><input type= "text" style ="height:25px" name = "price" size = "15"required/></td>
+    <td><input type= "text" style ="height:25px" name = "price" size = "15" placeholder="insert price"required/></td>
   </tr>
   <tr>
     <td align = "right"><b>Product Year:</b> </td>
@@ -66,11 +66,11 @@ include ("../../shared/initialize.php");
   </tr>
   <tr>
     <td align = "right"><b>Product Quantity:</b> </td>
-    <td><input type = "text" style ="height:25px" name = "quantity" size = "15"/></td>
+    <td><input type = "text" style ="height:25px" name = "quantity" placeholder="insert quantity"size = "15"/></td>
   </tr>
   <tr>
 		<td align = "right"><b>Product Active:</b> </td>
-		<td><input type = "text" style ="height:25px" name = "availability" size = "15"/></td>
+		<td><input type = "text" style ="height:25px" name = "availability" placeholder = "insert 0 or 1"size = "15"/></td>
 	</tr>
 	<tr align = "center">
 		<td colspan = "10"><input type= "submit" style ="height:35px; width:150px" name = "insert_post" value = "Insert Now"/></td>
