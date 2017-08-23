@@ -9,7 +9,7 @@
   <title>Vintage - store </title>
   <link rel="icon" href="http://localhost:8080/ecommerce/public/images/rose.png"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-  <link rel="stylesheet" href="http://localhost:8080/ecommerce/admin/style_admin/admin.css">
+  <link rel="stylesheet" href="http://localhost:8080/ecommerce/admin/style_admin/admin_page.css">
 </head>
 
 <body style="background-color:white;">
@@ -22,7 +22,7 @@
 
     <navigation>
       <ul>
-        <li> <a href="<?php echo ("http://localhost:8080/ecommerce/admin/users/admin_page.php?login=$login") ;?>" style="font-family: 'Tangerine', serif;
+        <li> <a href="<?php echo ("http://localhost:8080/ecommerce/admin/index.php?login=$login") ;?>" style="font-family: 'Tangerine', serif;
         font-size: 50px;color:white;"> Admin Home </a> </li>
       </ul>
     </navigation>

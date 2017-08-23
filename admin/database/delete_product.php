@@ -8,7 +8,7 @@ if(isset($_GET['delete_product'])){
   if ($run_delete)
   {
     $msg = "Product has been deleted!";
-    echo "<script>alert('$msg');location.href = 'http://localhost:8080/ecommerce/admin/database/index.php?view_all'</script>";
+    echo "<script>alert('$msg');window.open('view_all.php', '_self')</script>";
     return ;
   }
 }

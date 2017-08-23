@@ -3,40 +3,30 @@ session_start();
 require_once('../../shared/initialize.php');
 $login = $_POST['login'];
 $_SESSION['login'] = $login;
-$pass = $_POST['passwd'];
-$email = $_POST['email'];
 
 if ($_POST['submit'] === "Create an account")
 {
-		$hash = hash('whirlpool', $pass);
-		if (!file_exists("private"))
-		{
-      mkdir("private", 0777, true);
-      $unserialize = array(array('email'=>$email, 'login'=>$login, 'passwd'=>$hash));
-    }
-    else
-    {
-      $check = file_get_contents("private/passwd");
-      $unserialize = unserialize($check);
-      foreach($unserialize as $value)
-      {
-        if ($value['login'] == $login || $value['email'] == $email)
-        {
-          $msg = "This user already exists, please enter a different user!";
-          echo "<script> alert('$msg');location.href = 'http://localhost:8080/ecommerce/admin/users/create_account.php?msg=$msg'; </script>";
-          return ;
-        }
-      }
-      $unserialize[] = array('email'=> $email, 'login'=>$login, 'passwd'=>$hash);
-    }
-    $convert = serialize($unserialize);
-    file_put_contents("private/passwd", $convert);
-    $msg = "Your login and password was created!";
-    echo "<script> alert('$msg'); location.href = 'http://localhost:8080/ecommerce/public/index.php?msg=$msg'; </script>";
-    die();
+	global $conn;
+	$hash = hash('whirlpool', $pass);
+	$first = $_POST['first'];
+	$last = $_POST['last'];
+	$phone = $_POST['phone'];
+	$email = $_POST['email'];
+	$pass = $_POST['passwd'];
+	$table = "Users";
+	$check = "ALTER TABLE Products ADD UNIQUE INDEX(first_name, last_name, phone, email, login, password, hash)";
+	mysqli_query($conn, $check);
+	$insert_user = "INSERT INTO $table(first_name, last_name, phone, email, login, password, hash)
+	values('$first', '$last', '$phone', '$email', '$login', '$pass','$hash')";
+	$insert = mysqli_query($conn, $insert_user);
+	if ($insert){
+	  $msg = "Account was created!";
+	  echo "<script>alert('$msg');location.href = 'http://localhost:8080/ecommerce/public/index.php?login=$login'</script>";
+	  return ;
+	}
+	else {
+	   echo "Error: " . $insert_product . "<br>" . mysqli_error($conn);
+
+	}
 }
-  else {
-    $msg = "Submit your login and password!";
-    echo "<script> alert('$msg');location.href = 'http://localhost:8080/ecommerce/admin/users/create_account.php?msg=$msg'; </script>";
-  }
 ?>

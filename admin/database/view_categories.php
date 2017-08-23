@@ -1,3 +1,6 @@
+<?php
+  include('../headers/admin_header.php');
+?>
 <table width = "825" height= "700" align = "center" bgcolor = "grey"  border = "5">
   <tr align = "center">
     <td colspan = "6"><h2>All Categories</h2></td>
@@ -9,7 +12,7 @@
     <td><b>Delete</td>
   </tr>
   <?php
-include ("../../shared/initialize.php");
+    include ("../../shared/initialize.php");
     $get_cat = "select * from Categories";
     $run_cat = mysqli_query($conn, $get_cat);
     $i = 0;
@@ -22,7 +25,7 @@ include ("../../shared/initialize.php");
   <tr bgcolor = "#A9A9A9" align = "center">
     <td><?php echo $i;?></td>
     <td><b><?php echo $cat_title;?></b></td>
-    <td><a href = "index.php?edit_category=<?php echo $cat_id; ?>">Edit</a></td>
+    <td><a href = "edit_category.php?edit_category=<?php echo $cat_id; ?>">Edit</a></td>
     <td><a href = "delete_cat.php?delete_cat=<?php echo $cat_id;?>">Delete</a></td>
   </tr>
 <?php } ?>
@@ -48,7 +51,7 @@ if (isset($_POST['add_category']))
   if ($run_cat)
   {
     echo "<script>alert('New category has been inserted!')</script>";
-    echo "<script>window.open('index.php?view_categories', '_self')</script>";
+    echo "<script>window.open('view_categories.php', '_self')</script>";
   }
   else {
       echo "Error: " . $insert_cat . "<br>" . mysqli_error($conn);

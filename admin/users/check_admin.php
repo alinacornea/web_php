@@ -20,7 +20,7 @@ if (auth($login, $pass) == TRUE)
 {
     $_SESSION['login'] = $login;
     $msg = "You logged in succesfully! Welcome";
-    echo "<script> alert('$msg');location.href = 'http://localhost:8080/ecommerce/admin/users/admin_page.php?login=$login'; </script>";
+    echo "<script> alert('$msg');location.href = 'http://localhost:8080/ecommerce/admin/index.php?login=$login'; </script>";
 }
 else {
     # code...

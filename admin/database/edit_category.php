@@ -1,3 +1,6 @@
+<?php
+include('../headers/admin_header.php');
+?>
 <link rel="stylesheet" type="text/css" href="../style_admin/category.css">
 <table align="center">
   <tr align = "center">
@@ -34,11 +37,12 @@
     print_r($update_pro);
     $update_pro = mysqli_query($conn, $update_product);
     if ($update_pro){
-      echo "<script> location.href = 'http://localhost:8080/ecommerce/admin/database/index.php?view_categories'</script>";
+      echo "<script> window.open('view_categories.php', '_self')</script>";
         return ;
     }
     else {
       echo "Error: " . $update_product . "<br>" . mysqli_error($conn);
       }
     }
+    include('../headers/admin_footer.php');
 ?>

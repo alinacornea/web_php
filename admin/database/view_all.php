@@ -1,3 +1,6 @@
+<?php
+include('../headers/admin_header.php'); ?>
+?>
 <div style= "overflow-x:auto;">
 <link rel="stylesheet" type="text/css" href="../style_admin/view.css">
 <table  border = "5" >
@@ -45,9 +48,12 @@
     <td><?php echo $pro_year;?></td>
     <td><?php echo $pro_quantity;?></td>
     <td name="availability"><?php if($pro_active == 1 && $pro_quantity > 0){echo "<font color='green'>active</font>";}else {echo "<font color='red'>not active</font>";}?></td>
-    <td><a href = "index.php?edit_product=<?php echo $pro_id; ?>">Edit</a></td>
+    <td><a href = "edit_product.php?edit_product=<?php echo $pro_id; ?>">Edit</a></td>
     <td><a href = "delete_product.php?delete_product=<?php echo $pro_id;?>">Delete</a></td>
   </tr>
 <?php } ?>
 </table>
 <div>
+<?php
+  include('../headers/admin_footer.php'); ?>
+?>

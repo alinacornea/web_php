@@ -7,7 +7,7 @@ if(isset($_GET['delete_cat'])){
   if ($run_delete)
   {
     echo"<script>alert('A product has been deleted!')</script>";
-    echo "<script>window.open('index.php?view_categories', '_self')</script>";
+    echo "<script>window.open('view_categories.php', '_self')</script>";
   }
 }
 ?>

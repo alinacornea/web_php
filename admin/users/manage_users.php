@@ -2,12 +2,43 @@
 add_delete_admin.php();
 -->
 <?php require_once('../../shared/initialize.php');?>
-
 <?php include('../headers/admin_header.php'); ?>
-
+<?php require_once('../../shared/install.php');?>
+<!DOCTYPE HTML>
 <html>
+	<head>
+		<meta charset = "utf-8"/>
+		<title> Vintage - manage items </title>
+	</head>
+<body>
+	<div class = "main_wrapper">
+			<div id = "right">
+			<!-- <h2 style = "text-align: center; color: white; font-family: Georgia"> Manage Content: </h2> -->
+        <a href= "index.php?view_customers"> View Customers</a></br>
+				<a href= "index.php?add_admin"> Add new admin</a></br>
+				<a href= "index.php?modify_user"> Modify data user</a></br>
+				<a href= "index.php?delete_user"> Delete user</a></br>
+      </div>
+			<div id = "left">
+				<?php
+				if (isset($_GET['view_customers']))
+					include("view_customers.php");
+				if (isset($_GET['add_admin']))
+					include("add_admin.php");
+				if (isset($_GET['modify_user']))
+					include ("modify_user.php");
+				if (isset($_GET['delete_user']))
+					include ("delete_user.php");
+				?>
+			</div>
+    </div>
+</body>
+</html>
+<?php include('../headers/admin_footer.php'); ?>
+
+<!-- <html>
 <title>Manage Users</title>
-<link rel="stylesheet" media= "all" href ="../style_admin/create_account.css"/>
+<link rel="stylesheet" media= "all" href ="../style_admin/account_create.css"/>
 <body>
   <p> Add, delete or modify a user: </p>
     <form id="board"action="add_delete_admin.php"style="border:2px solid #ccc ;width: 50%" method="post">
@@ -24,7 +55,4 @@ add_delete_admin.php();
   </div>
 </form>
 </body>
-</html>
-
-
-<?php include('../headers/admin_footer.php'); ?>
+</html> -->

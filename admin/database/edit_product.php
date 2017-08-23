@@ -1,3 +1,7 @@
+<?php
+	require_once('../../shared/initialize.php');
+	include('../headers/admin_header.php');
+?>
 <div style= "overflow-x:auto;">
 <link rel="stylesheet" type="text/css" href="../style_admin/view.css">
 <table>
@@ -76,11 +80,14 @@
     price = '$product_price', year = '$product_year', quantity = '$product_quantity' WHERE id=$update_id";
     $update_pro = mysqli_query($conn, $update_product);
     if ($update_pro){
-      echo "<script> location.href = 'http://localhost:8080/ecommerce/admin/database/index.php?view_all'</script>";
+      echo "<script> window.open('view_all.php', '_self')</script>";
       return ;
     }
     else {
         echo "Error: " . $update_product . "<br>" . mysqli_error($conn);
     }
   }
+?>
+<?php
+include('../headers/admin_footer.php');
 ?>

@@ -1,6 +1,7 @@
 <!DOCTYPE>
 <?php
 include ("../../shared/initialize.php");
+include('../headers/admin_header.php'); ?>
 ?>
 <html>
 <head>
@@ -100,8 +101,8 @@ include ("../../shared/initialize.php");
 		values('$product_title', '$product_cat', '$product_desc', '$product_image', '$product_price', '$product_year','$product_quantity', '$product_active')";
     $insert_pro = mysqli_query($conn, $insert_product);
     if ($insert_pro){
-      $msg = "Product has been inserted!";
-      echo "<script>alert('$msg');location.href = 'http://localhost:8080/ecommerce/admin/database/index.php?add_product'</script>";
+      echo"<script>alert('A new product was inserted!')</script>";
+      echo "<script>window.open('view_all.php', '_self')</script>";
       return ;
     }
     else {
@@ -109,4 +110,7 @@ include ("../../shared/initialize.php");
 
     }
   }
+?>
+<?php
+include('../headers/admin_footer.php'); ?>
 ?>
