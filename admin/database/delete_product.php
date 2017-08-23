@@ -12,4 +12,4 @@ if(isset($_GET['delete_product'])){
     return ;
   }
 }
- ?>
+?>

@@ -7,7 +7,7 @@ include('../headers/header.php');
 if (isset($_SESSION['login']))
 {
   $msg =  "You already logged in as ".$_SESSION['login'] ;
-  echo "<script> alert('$msg');location.href = 'http://localhost:8080/ecommerce/public/index.php?login=$login'; </script>";
+  echo "<script> alert('$msg');window.open('../../public/index.php?login=$login', '_self'); </script>";
   die();
 }
 
@@ -16,14 +16,19 @@ if (isset($_POST['login']))
   $login = $_POST['login'];
   $pass = $_POST['passwd'];
 
-  function auth($login, $passwd)
+  function auth($login, $pass)
   {
-    $pass =  hash('whirlpool', $passwd);
-    $check = unserialize(file_get_contents("private/passwd"));
-    foreach($check as $value)
+    global $conn;
+    $passwd =  hash('whirlpool', $pass);
+    $get_cat = "select * from Users where login='{$login}' and hash='{$passwd}'";
+    $check = mysqli_query($conn, $get_cat);
+    if (!$check) {
+      die('Invalid query: ' . mysqli_error($conn));
+  }
+    while ($f = mysqli_fetch_array($check))
     {
-      if ($value['login'] === $login && $value['passwd'] === $pass)
-        return TRUE;
+      if ($f['login'] === $login && $f['hash'] === $passwd){
+        return TRUE;}
     }
     return FALSE;
   }
@@ -31,14 +36,14 @@ if (isset($_POST['login']))
   if (auth($login, $pass) == TRUE)
   {
       $_SESSION['login'] = $login;
-      $msg = "$login".", you logged in succesfully! Welcome";
-      echo "<script> alert('$msg');location.href = 'http://localhost:8080/ecommerce/public/index.php?login=$login'; </script>";
+      echo "<script>alert('$login, You logged in succesfully! Welcome')</script>";
+      echo "<script>window.open('../../public/index.php?$login', '_self')</script>";
   }
   else
   {
       // $_SESSION['login'] = "";
-      $msg = "Incorect login or password, try again!";
-      echo "<script> alert('$msg');location.href = 'http://localhost:8080/ecommerce/admin/users/login.php'; </script>";
+      echo "<script>alert('$login, Incorect login or password, try again!')</script>";
+      echo "<script>window.open('login.php', '_self')</script>";
   }
 }
 ?>
@@ -54,7 +59,7 @@ if (isset($_POST['login']))
     <br />
     <input type="submit" name="submit" value="SUBMIT" />
     <br />
-      <li> <a href="/ecommerce/admin/users/create_account.php"><b style="font-size:23px;color:blue;background-color:white;"> Are you new? Create an account here</b></a> </li>
+      <li> <a href="create_account.php"><b style="font-size:23px;color:blue;background-color:white;"> Are you new? Create an account here</b></a> </li>
   </form>
 </div>
 </body>

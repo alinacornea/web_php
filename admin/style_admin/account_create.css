@@ -6,7 +6,6 @@ h2{
 }
 .container{
   padding: 20px;
-
 }
 
 #board{
@@ -20,12 +19,6 @@ input[type=text], input[type=password]{
   padding:14px 15px;
   margin: 7px 0;
   display:inline-block;
-  border: 3px solid #ccc;
-}
-
-input[type=checkbox]{
-  width:23px;
-  height:20px;
 }
 
 .signupbtn{

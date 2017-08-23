@@ -32,9 +32,7 @@ include('../headers/admin_header.php');
   {
     $cat_id = $_POST['cat_id'];
     $cat_title = $_POST['cat_title'];
-    print
     $update_product = "UPDATE Categories SET cat_title = '$cat_title' WHERE cat_id=$cat_id";
-    print_r($update_pro);
     $update_pro = mysqli_query($conn, $update_product);
     if ($update_pro){
       echo "<script> window.open('view_categories.php', '_self')</script>";

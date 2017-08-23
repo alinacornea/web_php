@@ -3,28 +3,32 @@ include ("../../shared/initialize.php");
 session_start();
 $login = $_POST['login'];
 $pass = $_POST['passwd'];
-function auth($login, $passwd)
+function auth($login, $pass)
 {
+  global $conn;
   $passwd =  hash('whirlpool', $pass);
-  $get_cat = "select * from Users where login='{$login}' and hash='{$passwd}'";
-  print_r($get_cat);
-  if (mysqli_query($conn, $get_cat) === TRUE){
-    return TRUE;}
-  else {
-    return FALSE;
+  $get_cat = "select * from Admins where login='{$login}' and hash='{$passwd}'";
+  $check = mysqli_query($conn, $get_cat);
+  if (!$check) {
+    die('Invalid query: ' . mysqli_error($conn));
+}
+  while ($f = mysqli_fetch_array($check))
+  {
+    if ($f['login'] === $login && $f['hash'] === $passwd){
+      return TRUE;}
   }
+  return FALSE;
 }
 
-auth($login, $pass);
-if (auth($login, $pass) == TRUE)
+if (auth($login, $pass) === TRUE)
 {
     $_SESSION['login'] = $login;
-    $msg = "You logged in succesfully! Welcome";
-    echo "<script> alert('$msg');location.href = 'http://localhost:8080/ecommerce/admin/index.php?login=$login'; </script>";
+    echo "<script>alert('$login, You logged in succesfully! Welcome')</script>";
+    echo "<script>window.open('../index.php?$login', '_self')</script>";
 }
 else {
     # code...
-    $msg = "Incorect login or password, try again!";
-    echo "<script> alert('$msg');location.href = 'http://localhost:8080/ecommerce/admin/users/admin_login.php?msg=$msg'; </script>";
+    echo "<script>alert('$login, Incorect login or password, try again!')</script>";
+    echo "<script>window.open('admin_login.php', '_self')</script>";
 }
 ?>

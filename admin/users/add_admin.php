@@ -14,7 +14,7 @@ if ($_POST['submit'] === "Add Admin")
 	$hash = hash('whirlpool', $pass);
 	$table = "Admins";
 	$check = "select * from Admins where login='{$login}' and email='{$email}'";
-	if (mysqli_query($conn, $check) === true)
+	if (mysqli_query($conn, $check) == true)
 	{
 			echo "<script>alert('$login, You are already an admin!')</script>";
 			echo "<script>window.open('../index.php', '_self')</script>";

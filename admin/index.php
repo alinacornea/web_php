@@ -5,7 +5,7 @@
 <title>Admin Area</title>
 <link rel="stylesheet" type="text/css" href="style_admin/admin_page.css">
 <body>
-  <div class="dropdown"  style="float:left;">
+  <div class="dropdown"  >
     <button class="dropbtn">Manage products</button>
     <div class="dropdown-content">
       <a href= "database/add_product.php"> Insert New Product</a></br>
@@ -24,13 +24,13 @@
       ?>
     </div>
   </div>
-  <div class="dropdown" style="float:right;">
+  <div class="dropdown">
     <button class="dropbtn">Manage users</button>
     <div class="dropdown-content">
-      <a href= "users/view_customers"> View Customers</a></br>
-      <a href= "users/add_admin"> Add new admin</a></br>
-      <a href= "users/modify_user"> Modify data user</a></br>
-      <a href= "users/delete_user"> Delete user</a></br>
+      <a href= "users/view_customers.php"> View Customers</a></br>
+      <a href= "users/add_admin.php"> Add new admin</a></br>
+      <a href= "users/view_customers.php"> Modify data user</a></br>
+      <a href= "users/view_customers.php"> Delete user</a></br>
     </div>
   </div>
 </body>
