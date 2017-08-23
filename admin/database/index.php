@@ -1,6 +1,6 @@
 <?php require_once('../../shared/initialize.php');?>
 <?php include('../headers/admin_header.php'); ?>
-<?php require_once('install.php');?>
+<?php require_once('../../shared/install.php');?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -10,11 +10,10 @@
 <body>
 	<div class = "main_wrapper">
 			<div id = "right">
-			<h2 style = "text-align: center; color: white; font-family: Georgia"> Manage Content: </h2>
+			<!-- <h2 style = "text-align: center; color: white; font-family: Georgia"> Manage Content: </h2> -->
 				<a href= "index.php?add_product"> Insert New Product</a></br>
 				<a href= "index.php?view_all"> View All Product</a></br>
-				<a href= "index.php?insert_cat"> Insert New Category</a></br>
-				<a href= "index.php?view_cats"> View All Categories</a></br>
+				<a href= "index.php?view_categories"> View All Categories</a></br>
 				<a href= "index.php?view_customers"> View Customers</a></br>
       </div>
 			<div id = "left">
@@ -25,10 +24,12 @@
 					include("view_all.php");
 				if (isset($_GET['edit_product']))
 					include ("edit_product.php");
+				if (isset($_GET['view_categories']))
+					include ("view_categories.php");
 				if (isset($_GET['insert_cat']))
 					include ("insert_cat.php");
-				if (isset($_GET['view_cats']))
-					include ("view_cats.php");
+				if (isset($_GET['edit_category']))
+					include ("edit_category.php");
 				?>
 			</div>
     </div>

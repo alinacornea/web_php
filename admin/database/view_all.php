@@ -1,6 +1,6 @@
 <div style= "overflow-x:auto;">
-<link rel="stylesheet" href="http://localhost:8080/ecommerce/admin/style_admin/view.css">
-<table>
+<link rel="stylesheet" type="text/css" href="../style_admin/view.css">
+<table  border = "5" >
   <tr align = "center">
     <td colspan = "9"><h2>View All Products</h2></td>
   </tr>
@@ -24,11 +24,11 @@
     $i = 0;
     while ($row_pro = mysqli_fetch_array($run_pro))
     {
-      $pro_id = $row_pro['product_id'];
+      $pro_id = $row_pro['id'];
       $pro_title = $row_pro['title'];
       $pro_cat = $row_pro['category'];
       $pro_desc = $row_pro['description'];
-      $pro_image = $row_pro['img_path'];
+      $product_image = $row_pro['img_path'];
       $pro_price = $row_pro['price'];
       $pro_year = $row_pro['year'];
       $pro_quantity = $row_pro['quantity'];
@@ -40,11 +40,11 @@
     <td align= "center"><b><?php echo $pro_title;?></b></td>
     <td align= "center"><?php echo $pro_cat;?></td>
     <td id="desc"><?php echo $pro_desc;?></td>
-    <td><img src = "product_images/<?php echo $pro_image;?>"width= "80" height = "80"/></td>
+    <td><img src = "product_images/<?php echo $product_image;?>"width= "80" height = "50"/></td>
     <td><?php echo $pro_price;?></td>
     <td><?php echo $pro_year;?></td>
     <td><?php echo $pro_quantity;?></td>
-    <td><?php if($pro_active == 1 || $pro_quantity > 0){echo "active";}else {echo"not active";}?></td>
+    <td name="availability"><?php if($pro_active == 1 && $pro_quantity > 0){echo "<font color='green'>active</font>";}else {echo "<font color='red'>not active</font>";}?></td>
     <td><a href = "index.php?edit_product=<?php echo $pro_id; ?>">Edit</a></td>
     <td><a href = "delete_product.php?delete_product=<?php echo $pro_id;?>">Delete</a></td>
   </tr>

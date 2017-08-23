@@ -1,5 +1,5 @@
 <div style= "overflow-x:auto;">
-<link rel="stylesheet" href="http://localhost:8080/ecommerce/admin/style_admin/view.css">
+<link rel="stylesheet" type="text/css" href="../style_admin/view.css">
 <table>
   <tr align = "center">
     <td colspan = "9"><h2>Update a product</h2></td>
