@@ -1,21 +1,21 @@
 <?php
+include ("../../shared/initialize.php");
 session_start();
 $login = $_POST['login'];
 $pass = $_POST['passwd'];
 function auth($login, $passwd)
 {
-  $pass =  hash('whirlpool', $passwd);
-  $check = unserialize(file_get_contents("private/admins"));
-  foreach($check as $value)
-  {
-
-    if ($value['login'] === $login && $value['passwd'] === $pass)
-      return TRUE;
+  $passwd =  hash('whirlpool', $pass);
+  $get_cat = "select * from Users where login='{$login}' and hash='{$passwd}'";
+  print_r($get_cat);
+  if (mysqli_query($conn, $get_cat) === TRUE){
+    return TRUE;}
+  else {
+    return FALSE;
   }
-  return FALSE;
 }
 
-
+auth($login, $pass);
 if (auth($login, $pass) == TRUE)
 {
     $_SESSION['login'] = $login;
