@@ -19,4 +19,4 @@
 </body>
 </html>
 
-<?php include('../headers/admin_footer.php'); ?>
+<?php include('../headers/footer.php'); ?>

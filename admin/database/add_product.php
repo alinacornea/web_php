@@ -19,7 +19,7 @@ include('../headers/admin_header.php'); ?>
 	</tr>
 	<tr>
 		<td align = "right"><b>Product Title:</b></td>
-		<td><input type= "text" style ="height:25px" name = "title" size = "50" placeholder="insert title"required/></td>
+		<td><input type= "text" name = "title" size = "50" placeholder="insert title"required/></td>
 	</tr>
 	<tr>
 		<td align = "right"><b>Product Category:</b> </td>
@@ -48,12 +48,12 @@ include('../headers/admin_header.php'); ?>
     </tr>
   <tr>
     <td align = "right"><b>Product Price:</b> </td>
-    <td><input type= "text" style ="height:25px" name = "price" size = "15" placeholder="insert price"required/></td>
+    <td><input type= "text" name = "price" size = "15" placeholder="insert price"required/></td>
   </tr>
   <tr>
     <td align = "right"><b>Product Year:</b> </td>
     <td>
-      <select name="year" id="year" style="height:30px; width:70px;"> </select>
+      <!-- <select name="year" id="year"> </select>
         <script>
           var start = 1900;
           var end = new Date().getFullYear();
@@ -62,16 +62,17 @@ include('../headers/admin_header.php'); ?>
             options += "<option>"+ year +"</option>";
           }
           document.getElementById("year").innerHTML = options;
-        </script>
+        </script> -->
+      <input type = "text" name = "year" placeholder="insert year"size = "15"/>
     </td>
   </tr>
   <tr>
     <td align = "right"><b>Product Quantity:</b> </td>
-    <td><input type = "text" style ="height:25px" name = "quantity" placeholder="insert quantity"size = "15"/></td>
+    <td><input type = "text" name = "quantity" placeholder="insert quantity"size = "15"/></td>
   </tr>
   <tr>
 		<td align = "right"><b>Product Active:</b> </td>
-		<td><input type = "text" style ="height:25px" name = "availability" placeholder = "insert 0 or 1"size = "15"/></td>
+		<td><input type = "text" name = "availability" placeholder = "insert 0 or 1"size = "15"/></td>
 	</tr>
 	<tr align = "center">
 		<td colspan = "10"><input type= "submit" style ="height:35px; width:150px" name = "insert_post" value = "Insert Now"/></td>

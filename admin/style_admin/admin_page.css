@@ -4,26 +4,28 @@ body{
 
 h1 {
   text-align: center;
-  margin: 0 10px 10px 0;
-  width: 100%;
+  margin-top:10px;
+  margin-right:0px;
   background-image: url('http://localhost:8080/ecommerce/public/images/haeder.jpg');
   font-family: 'Tangerine', serif;
-  font-size: 90px;
+  font-size: 70px;
   padding:20px;
 }
 #home{
  float: left;
  padding: 5px;
- width:60px;
- height:60px;
+ width:50px;
+ height:50px;
 }
 
 #logout{
   float: right;
-  padding: 20px;
+  margin-right: 30px;
+  padding:5px;
   width:50px;
   height:50px;
 }
+
 #main-menu{
   font-size:30px;
   color:white;
@@ -45,8 +47,8 @@ p{
     font-size: 16px;
     border-style: groove;
     cursor: pointer;
-    width:500px;
-    font-size:30px;
+    width:400px;
+    font-size:24px;
     margin-left:40px;
     margin-right:40px;
 }
@@ -61,8 +63,8 @@ p{
     margin-right:40px;
     background-color: none;
     min-width: 160px;
-    font-size:25px;
-    width:500px;
+    font-size:16px;
+    width:400px;
 }
 
 .dropdown-content a {

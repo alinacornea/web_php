@@ -3,6 +3,8 @@ session_start();
 require_once('../../shared/initialize.php');
 include('../headers/admin_header.php');
 
+$check_login = $_SESSION['login'];
+
 if ($_POST['submit'] === "Add Admin")
 {
 	global $conn;
@@ -13,11 +15,12 @@ if ($_POST['submit'] === "Add Admin")
 	$pass = $_POST['passwd'];
 	$hash = hash('whirlpool', $pass);
 	$table = "Admins";
-	$check = "select * from Admins where login='{$login}' and email='{$email}'";
-	if (mysqli_query($conn, $check) == true)
+	$check = mysqli_query($conn, "select * from $table where login='{$login}' and email='{$email}'");
+	$num = mysqli_num_rows($check);
+	if ($num > 0)
 	{
-			echo "<script>alert('$login, You are already an admin!')</script>";
-			echo "<script>window.open('../index.php', '_self')</script>";
+			echo "<script>alert('$login, This admin already exists!')</script>";
+			echo "<script>window.open('add_admin.php', '_self')</script>";
 			return;
 	}
 	else {
@@ -26,11 +29,11 @@ if ($_POST['submit'] === "Add Admin")
 		values('$first', '$last', '$email', '$login', '$hash')";
 		$insert = mysqli_query($conn, $insert_admin);
 		if ($insert){
-			echo "<script>alert('$login, You are now an admin!')</script>";
+			echo "<script>alert('Adding '$login' as admin was succesfully done!')</script>";
+			echo "<script>window.open('view_admins.php?login=$check_login', '_self')</script>";
 		}
 		else {
 			echo "Error: " . $insert . "<br>" . mysqli_error($conn);
-
 		}
 	}
 }

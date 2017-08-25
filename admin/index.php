@@ -1,11 +1,11 @@
 <?php require_once('../shared/initialize.php'); ?>
-<?php include('headers/admin_header.php'); ?>
+<?php include('headers/admin_header.php');?>
 
 <html>
 <title>Admin Area</title>
 <link rel="stylesheet" type="text/css" href="style_admin/admin_page.css">
-<body>
-  <div class="dropdown"  >
+<body align = "center">
+  <div class="dropdown">
     <button class="dropbtn">Manage products</button>
     <div class="dropdown-content">
       <a href= "database/add_product.php"> Insert New Product</a></br>
@@ -27,10 +27,10 @@
   <div class="dropdown">
     <button class="dropbtn">Manage users</button>
     <div class="dropdown-content">
-      <a href= "users/view_customers.php"> View Customers</a></br>
-      <a href= "users/add_admin.php"> Add new admin</a></br>
-      <a href= "users/view_customers.php"> Modify data user</a></br>
-      <a href= "users/view_customers.php"> Delete user</a></br>
+      <a href= "users/view_customers.php?login=<?php echo $login;?>"> View All Users</a></br>
+      <a href= "users/view_admins.php?login=<?php echo $login;?>"> View All Admins</a></br>
+      <a href= "users/add_admin.php?login=<?php echo $login;?>"> Add New Admin</a></br>
+      <a href= "users/view_customers.php"> Delete User</a></br>
     </div>
   </div>
 </body>

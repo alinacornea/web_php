@@ -4,42 +4,47 @@ body{
 
 h1 {
   text-align: center;
-  margin: 0 20px 20px 0;
+  margin: -6px -6px 0 -6px ;
   background-image: url('http://tv-xxl.ru/photos/krasivaya-shapka-dlya-saytov-22893-large.jpg');
   font-family: 'Tangerine', serif;
-  font-size: 90px;
+  font-size: 70px;
   padding:30px;
 }
 #home{
  float: left;
- padding: 5px;
- width:50px;
- height:50px;
+ padding: 20px;
+ width:40px;
+ height:40px;
+ margin-left:-18px;
 }
 
 #cart{
   float: right;
   padding: 20px;
-  width:50px;
-  height:50px;
+  width:40px;
+  margin-right:-18px;
+  height:40px;
 }
 
 #admin{
   float: right;
   padding: 20px;
-  width:50px;
-  height:50px;
+  width:40px;
+  margin-right:-18px;
+  height:40px;
 }
 
 #logout{
   float: right;
+  margin-right:-18px;
   padding: 20px;
-  width:50px;
-  height:50px;
+  width:40px;
+  height:40px;
 }
 #login{
   float: right;
+  margin-right:-18px;
   padding: 20px;
-  width:50px;
-  height:50px;
+  width:40px;
+  height:40px;
 }

@@ -1,18 +1,18 @@
 <?php
 include('../headers/admin_header.php'); ?>
 ?>
-<div style= "overflow-x:auto;">
+
 <link rel="stylesheet" type="text/css" href="../style_admin/users.css">
 <table  border = "5" >
   <tr align = "center">
-    <td colspan = "9"><h2>View All Users</h2></td>
+    <td colspan = "10"><h2>View All Users</h2></td>
   </tr>
   <tr id="name">
     <td>Id</</td>
     <td>First Name</td>
     <td>Last Name</td>
     <td>Phone</td>
-    <td colspan="2">Email</td>
+    <td colspan="3">Email</td>
     <td>Login</td>
     <td></td>
     <td></td>
@@ -35,16 +35,15 @@ include('../headers/admin_header.php'); ?>
   <tr id="info">
     <td><?php echo $i;?></td>
     <td align= "center"><b><?php echo $user_first;?></b></td>
-    <td align= "center"><?php echo $user_last;?></td>
+    <td align= "center"><b><?php echo $user_last;?></b></td>
     <td><?php echo $user_phone;?></td>
-    <td colspan="2"><?php echo $user_email;?></td>
+    <td colspan="3"><?php echo $user_email;?></td>
     <td><?php echo $user_login;?></td>
-    <td><a href = "modify_admin.php?modify_admin=<?php echo $user_id; ?>">Edit User</a></td>
-    <td><a href = "delete_admin.php?delete_admin=<?php echo $user_id;?>">Delete User</a></td>
+    <td><a href = "modify_user.php?modify_user=<?php echo $user_id; ?>">Edit User</a></td>
+    <td><a href = "delete_user.php?delete_user=<?php echo $user_id;?>">Delete User</a></td>
   </tr>
 <?php } ?>
 </table>
-<div>
 <?php
   include('../headers/admin_footer.php'); ?>
 ?>

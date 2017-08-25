@@ -1,9 +1,9 @@
 <?php
   include('../headers/admin_header.php');
 ?>
-<table width = "825" height= "700" align = "center" bgcolor = "grey"  border = "5">
+<table width = "725" height= "700" align = "center" bgcolor = "grey"  border = "5">
   <tr align = "center">
-    <td colspan = "6"><h2>All Categories</h2></td>
+    <td colspan = "6"><h2 style= "height:5px; font-size: 18px;">Display all Categories</h2></td>
   </tr>
   <tr align = "center" bgcolor = "#A8C7D6">
     <td><b>Category Id</</td>
@@ -32,8 +32,8 @@
 
 <tr>
   <td colspan ="10"><form action="" method= "post" align = "right">
-  <input type= "text" size="20" name = "new_cat" placeholder = "New category" required/>
-  <input type = "submit" style="border: 2px solid;border-radius: 25px;"name = "add_category" value = "Add a new category"/>
+  <input type= "text" style="width:160px;height:30px;"name = "new_cat" placeholder = "New category name" required/>
+  <input type = "submit" style="border:2px solid;border-radius: 20px;height: 30px; width:140px" name = "add_category" value = "Add a new category"/>
   </form>
   </td>
 </tr>
@@ -58,4 +58,8 @@ if (isset($_POST['add_category']))
   }
 
 }
+?>
+
+<?php
+include('../headers/admin_footer.php');
 ?>

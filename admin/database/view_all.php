@@ -2,16 +2,16 @@
 include('../headers/admin_header.php'); ?>
 ?>
 <div style= "overflow-x:auto;">
-<link rel="stylesheet" type="text/css" href="../style_admin/view.css">
+<link rel="stylesheet" type="text/css" href="../style_admin/view_products.css">
 <table  border = "5" >
   <tr align = "center">
-    <td colspan = "9"><h2>View All Products</h2></td>
+    <td colspan = "13"><h2>Display all Products</h2></td>
   </tr>
   <tr id="name">
-    <td>Id</</td>
+    <td style="width:20px;">Id</</td>
     <td>Title</td>
     <td>Category</td>
-    <td>Description</td>
+    <td colspan = "2" >Description</td>
     <td>Image</td>
     <td>Price</td>
     <td>Year</td>
@@ -42,8 +42,8 @@ include('../headers/admin_header.php'); ?>
     <td><?php echo $i;?></td>
     <td align= "center"><b><?php echo $pro_title;?></b></td>
     <td align= "center"><?php echo $pro_cat;?></td>
-    <td id="desc"><?php echo $pro_desc;?></td>
-    <td><img src = "product_images/<?php echo $product_image;?>"width= "80" height = "50"/></td>
+    <td colspan = "2" id="desc"><?php echo $pro_desc;?></td>
+    <td><img src = "product_images/<?php echo $product_image;?>"width= "90" height = "60"/></td>
     <td><?php echo $pro_price;?></td>
     <td><?php echo $pro_year;?></td>
     <td><?php echo $pro_quantity;?></td>
@@ -54,6 +54,3 @@ include('../headers/admin_header.php'); ?>
 <?php } ?>
 </table>
 <div>
-<?php
-  include('../headers/admin_footer.php'); ?>
-?>
