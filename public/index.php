@@ -6,7 +6,7 @@
 
 <html lang="en">
 
-<link rel="stylesheet" href="front_style/home.css">
+<link rel="stylesheet" href="front_style/main.css">
 <head>
   <meta charset="utf-8">
   <title>Vintage - store </title>
@@ -28,8 +28,16 @@
       <a href= "display/show_products.php?category=timepieces"> Timepieces</a></br>
       <a href= "display/show_products.php?category=walldecor"> WallDecor</a></br>
     </div>
+    <button class="dropbt">Age</button>
+    <div class="dropdown-content">
+      <a href= "display/show_products.php?id=0"> < 1900</a></br>
+      <a href= "display/show_products.php?id=1"> 1900-1920</a></br>
+      <a href= "display/show_products.php?id=2"> 1921-1940</a></br>
+      <a href= "display/show_products.php?id=3"> 1941-1960</a></br>
+      <a href= "display/show_products.php?id=4"> 1961-1980</a></br>
+      <a href= "display/show_products.php?id=5"> 1981-2000</a></br>
+    </div>
   </div>
-</div>
 
 </body>
 </html>

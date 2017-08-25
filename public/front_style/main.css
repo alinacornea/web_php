@@ -1,0 +1,114 @@
+.dropbtn {
+    background-color: #FEF7D9;
+    color: black;
+    padding: 10px;
+    border-style: groove;
+    cursor: pointer;
+    width:200px;
+    font-size:16px;
+    margin:10px 0 10px -5px;
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+}
+
+.dropbt {
+    background-color: #FEF7D9;
+    color: black;
+    padding: 10px;
+    border-style: groove;
+    cursor: pointer;
+    width:200px;
+    font-size:16px;
+    margin:10px 0 10px -5px;
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    margin-left:-5px;
+    background-color: none;
+    font-size:16px;
+    font-weight:bold;
+    border:3px solid #c2a661;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    color:black;
+    display: block;
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+}
+
+.dropdown-content a:hover {background-color:black;color:#c2a661}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #c2a661;
+}
+
+/*.dropdown:hover .dropbt {
+    background-color: #c2a661;
+}*/
+
+.product{
+  margin-top:40px;
+  display:block;
+  text-align:center;
+  width:300px;
+  height: 350px;
+  position: relative;
+  float:right;
+  border-top: 3px solid #c2a661;
+  border-bottom:2px solid #c2a661;
+  border-right:2px solid #c2a661;
+  border-left:2px solid #c2a661;
+  margin-right: 7px;
+  background-color: #FFFAF0;
+
+}
+
+.title{
+  font-size:15px;
+  font-weight:bold;
+  margin-bottom: 7px;
+  margin-top: 7px;
+  font-family:"Lucida Console", Monaco, monospace;
+
+}
+
+.image{
+  width:220px;
+  height:200px;
+}
+
+.price{
+  font-size:18px;
+
+}
+
+
+.description{
+  font-family:Futura;
+  font-size:12px;
+  margin: -10px 50px 0px 50px;
+  /*background-color:#C2C3C3;*/
+  /*font-weight:bold;*/
+
+
+}
+
+.availability{
+
+}
+.product:hover  {background-color: #e8dfcd;
+}
+
+.product .title:hover {color:#BC8F8F;}

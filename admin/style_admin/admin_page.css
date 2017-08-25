@@ -76,7 +76,7 @@ p{
     display: block;
 }
 
-.dropdown-content a:hover {background-color: black;color:#DAA520}
+.dropdown-content a:hover {background-color: black;color:#c2a661}
 
 .dropdown:hover .dropdown-content {
     display: block;
