@@ -4,7 +4,7 @@
 
 <html>
 <title>Create_account</title>
-<link rel="stylesheet" media= "all" href ="../style_admin/account_create.css"/>
+<link rel="stylesheet" media= "all" href ="../style_admin/register.css"/>
 <body>
   <h2> Registration form: </h2>
     <form id = "board" action="action.php" method="post">

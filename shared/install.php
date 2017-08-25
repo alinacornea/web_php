@@ -166,5 +166,27 @@ echo "<br  />";
 
 // -----------------------------------------------------------
 // ----------------------------------------------------------
+// create a tempory shoping cart
+$sql = "CREATE TABLE IF NOT EXISTS Cart (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
+email VARCHAR(50) NOT NULL,
+login VARCHAR(50) NOT NULL,
+title VARCHAR(50) NOT NULL,
+category VARCHAR(50) NOT NULL,
+description TEXT NOT NULL,
+img_path CHAR(255) NOT NULL,
+price INT(6) NOT NULL,
+quantity INT,
+year INT,
+)";
+
+// Check table creation
+echo "<br  />";
+if (mysqli_query($conn, $sql)) {
+    echo "Table Admins created successfully";
+} else {
+    echo "Error creating table: " . mysqli_error($conn);
+}
+echo "<br  />";
 
 ?>

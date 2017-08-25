@@ -1,0 +1,45 @@
+h2{
+  margin-top: 15px;
+  font-family:'American Typewriter';
+  text-align:center;
+  font-size:30px;
+}
+.container input{
+  padding: 20px;
+  border:1px solid #c2a661;
+}
+
+#board{
+   border:2px solid #c2a661;
+   background-color:#C0C0C0;
+   width:950px;
+}
+
+input[type=text], input[type=password]{
+  width: 95%;
+  padding:14px 15px;
+  margin: 7px 0;
+  display:inline-block;
+}
+
+.signupbtn{
+  padding: 14px 15px;
+  font-size:25px;
+  margin: 7px 0;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 7px;
+  display:block;
+  font-family:Arial, "Helvetica", sans-serif;
+  font-weight:bold;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:2px 1px 0px #FFE4C4;
+  padding-top:6px;
+  position:relative;
+  cursor:pointer;
+  background-color: #c2a661;
+  background-image: linear-gradient(top,#c2a661,#3111);
+  border-radius: 5px;
+  box-shadow: inset 0px 1px 0px #BD871A, 0px 5px 0px 0px black, 0px 10px 5px #999;
+}

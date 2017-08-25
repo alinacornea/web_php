@@ -49,9 +49,9 @@ if (isset($_POST['login']))
 ?>
   <html>
   <title>Log in </title>
-  <link rel="stylesheet" media= "all" href = "../style_admin/login.css"/>
+  <link rel="stylesheet" media= "all" href = "../style_admin/login1.css"/>
   <body>
-  <div id="content">
+  <div class="content">
   <form action = "" method="post">
     <input type= "login" name="login" placeholder = "LOGIN" value="<?php echo $_SESSION['login']; ?>" />
     <br />
@@ -59,7 +59,7 @@ if (isset($_POST['login']))
     <br />
     <input type="submit" name="submit" value="SUBMIT" />
     <br />
-      <li> <a href="create_account.php"><b style="font-size:23px;color:blue;background-color:white;"> Are you new? Create an account here</b></a> </li>
+    <p> <a href="create_account.php"> Are you new? Create an account here</a> </p>
   </form>
 </div>
 </body>
