@@ -16,7 +16,6 @@
     order: 2;
 }
 
-
 .dropbtn {
     background-color: #FEF7D9;
     color: black;
@@ -29,7 +28,6 @@
     font-weight:bold;
 }
 .dropbt {
-
     background-color: #FEF7D9;
     color: black;
     padding: 10px;
@@ -38,7 +36,7 @@
     cursor: pointer;
     font-size:16px;
     margin:10px 0 10px -5px;
-    font-family:"Trebuchet MS", Helvetica, sans-serif;
+    font-family: "Roboto Mono";
     font-weight:bold;
 }
 
@@ -49,7 +47,6 @@
 
 .dropdown-content {
     margin-left:-5px;
-    background-color: none;
     font-size:16px;
     font-weight:bold;
     border:3px solid #c2a661;
@@ -61,11 +58,12 @@
     text-decoration: none;
     color:black;
     display: block;
-    font-family:"Trebuchet MS", Helvetica, sans-serif;
+    font-family:"Roboto Mono";
+    text-shadow: 4px 4px 4px #aaa;
+    text-decoration: underline;
 }
 
-.dropdown-content a:hover {background-color:black;color:#c2a661;font-size:23px;}
-
+.dropdown-content a:hover {background-color:black;color:#c2a661;font-size:23px;text-decoration: none;}
 .dropdown:hover .dropdown-content {
     display: block;
 }

@@ -10,6 +10,7 @@ include('../../admin/headers/header.php');
     while ($var = mysqli_fetch_array($all)){
       $id = $var['id'];
       $stock = $var['max_stock'];
+			print($stock);
       mysqli_query($conn, "UPDATE Products SET quantity = '$stock' WHERE id='$id'");
       $delete = mysqli_query($conn, "DELETE from Cart where id = '$id'");
       $i++;

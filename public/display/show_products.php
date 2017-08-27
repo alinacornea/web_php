@@ -6,12 +6,13 @@
 
 <html lang="en">
 
-<link rel="stylesheet" href="../front_style/display.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&effect=destruction">
+<link rel="stylesheet" href="../front_style/index.css">
 <head>
   <meta charset="utf-8">
   <title>Vintage - store </title>
   <link rel="icon" href="../images/rose.png"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 </head>
 
 <body>
@@ -42,7 +43,7 @@
     <div><img class= "image"src = "../../admin/database/product_images/<?php echo $product_image;?>"/></div>
     <div class="description"> <?php echo $pro_desc;?></div>
     <div class = "price"> $<?php echo $pro_price;?></div>
-    <div class = "stock"> <?php if ($pro_quantity > 0) {echo "<div style='color:green;'>in stock ".$pro_quantity."</div>";} else {echo "<div style='color:red;'>not in stock</div>";}?></div>
+    <div class = "stock"> <?php if ($pro_quantity > 0) {echo "<div style='color:green;'>in stock ".$pro_quantity."</div>";} else {echo "<div style='color:red;'>SOLD</div>";}?></div>
     <div class = "add"><form action = "add_cart.php?id=<?php echo $pro_id; ?>" method="post">
     <input type="submit"  value="Add to cart" />
   </form>
@@ -96,7 +97,7 @@ else {
   <div><img class= "image"src = "../../admin/database/product_images/<?php echo $product_image;?>"/></div>
   <div class="description"> <?php echo $pro_desc;?></div>
   <div class = "price"> $<?php echo $pro_price;?></div>
-  <div class = "stock"> <?php if ($pro_quantity > 0) {echo "<div style='color:green;'>in stock ".$pro_quantity."</div>";} else {echo "<div style='color:red;'>not in stock</div>";}?></div>
+  <div class = "stock"> <?php if ($pro_quantity > 0) {echo "<div style='color:green;'>in stock ".$pro_quantity."</div>";} else {echo "<div style='color:red;'>SOLD</div>";}?></div>
   <div class = "add">
   <form action="add_cart.php?id=<?php echo $pro_id; ?>" method="post" >
   <input id= "add" type="submit" value="Add to cart"/>
