@@ -6,7 +6,7 @@
 
 <html lang="en">
 
-<link rel="stylesheet" href="../front_style/index.css">
+<link rel="stylesheet" href="../front_style/display.css">
 <head>
   <meta charset="utf-8">
   <title>Vintage - store </title>
@@ -42,10 +42,11 @@
     <div><img class= "image"src = "../../admin/database/product_images/<?php echo $product_image;?>"/></div>
     <div class="description"> <?php echo $pro_desc;?></div>
     <div class = "price"> $<?php echo $pro_price;?></div>
-    <form action="add_cart.php?id=<?php echo $pro_id; ?>" method="post" >
-    <input type="submit" name="cart" value="Add to cart"/>
+    <div class = "stock"> <?php if ($pro_quantity > 0) {echo "<div style='color:green;'>in stock ".$pro_quantity."</div>";} else {echo "<div style='color:red;'>not in stock</div>";}?></div>
+    <div class = "add"><form action = "add_cart.php?id=<?php echo $pro_id; ?>" method="post">
+    <input type="submit"  value="Add to cart" />
   </form>
-    <!-- <div name="availability"> <?php if($pro_active == 1 && $pro_quantity > 0){echo "<font color='green'>available</font>";}else {echo "<font color='red'>not available</font>";}?> </div> -->
+</div>
   </div>
 
 <?php } }
@@ -95,11 +96,12 @@ else {
   <div><img class= "image"src = "../../admin/database/product_images/<?php echo $product_image;?>"/></div>
   <div class="description"> <?php echo $pro_desc;?></div>
   <div class = "price"> $<?php echo $pro_price;?></div>
-  <!-- <div<?php echo $pro_year;?></div -->
-  <div><?php if($pro_active == 1 && $pro_quantity > 0){echo "<div style='color:green;font-size:10px;'> available</div>";}else {echo "<div style='color:red; font-size:10px;'>not available</div>";} ?></div>
+  <div class = "stock"> <?php if ($pro_quantity > 0) {echo "<div style='color:green;'>in stock ".$pro_quantity."</div>";} else {echo "<div style='color:red;'>not in stock</div>";}?></div>
+  <div class = "add">
   <form action="add_cart.php?id=<?php echo $pro_id; ?>" method="post" >
-  <input type="submit" name="cart" value="Add to cart"/>
+  <input id= "add" type="submit" value="Add to cart"/>
   </form>
+</div>
   </div>
 </article>
 <?php }} ?>

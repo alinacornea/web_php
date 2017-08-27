@@ -70,10 +70,6 @@ include('../headers/admin_header.php'); ?>
     <td align = "right"><b>Product Quantity:</b> </td>
     <td><input type = "text" name = "quantity" placeholder="insert quantity"size = "15"/></td>
   </tr>
-  <tr>
-		<td align = "right"><b>Product Active:</b> </td>
-		<td><input type = "text" name = "availability" placeholder = "insert 0 or 1"size = "15"/></td>
-	</tr>
 	<tr align = "center">
 		<td colspan = "10"><input type= "submit" style ="height:35px; width:150px" name = "insert_post" value = "Insert Now"/></td>
 	</tr>
@@ -94,12 +90,11 @@ include('../headers/admin_header.php'); ?>
     $product_price = $_POST['price'];
     $product_quantity = $_POST['quantity'];
     $product_year = $_POST['year'];
-    $product_active = $_POST['availability'];
     $table = "Products";
-    $check = "ALTER TABLE Products ADD UNIQUE INDEX(title, category, description, img_path, price, year, quantity, availability)";
+    $check = "ALTER TABLE Products ADD UNIQUE INDEX(title, category, description, img_path, price, year, quantity)";
     mysqli_query($conn, $check);
-		$insert_product = "INSERT IGNORE INTO $table(title, category, description, img_path, price, year, quantity, availability)
-		values('$product_title', '$product_cat', '$product_desc', '$product_image', '$product_price', '$product_year','$product_quantity', '$product_active')";
+		$insert_product = "INSERT IGNORE INTO $table(title, category, description, img_path, price, year, quantity)
+		values('$product_title', '$product_cat', '$product_desc', '$product_image', '$product_price', '$product_year','$product_quantity')";
     $insert_pro = mysqli_query($conn, $insert_product);
     if ($insert_pro){
       echo"<script>alert('A new product was inserted!')</script>";

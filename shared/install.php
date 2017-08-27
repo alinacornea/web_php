@@ -41,8 +41,7 @@ description TEXT NOT NULL,
 img_path CHAR(255) NOT NULL,
 price INT(6) NOT NULL,
 quantity INT,
-year INT,
-availability INT(1)
+year INT
 )";
 
 // Check table creation
@@ -177,7 +176,8 @@ description TEXT NOT NULL,
 img_path CHAR(255) NOT NULL,
 price INT(6) NOT NULL,
 quantity INT,
-year INT,
+max_stock INT,
+year INT
 )";
 
 // Check table creation

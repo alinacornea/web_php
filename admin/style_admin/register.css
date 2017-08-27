@@ -9,6 +9,12 @@ h2{
   border:1px solid #c2a661;
 }
 
+h3{
+  font-family:'American Typewriter';
+  text-align:center;
+  font-size:30px;
+  color:white;
+}
 #board{
    border:2px solid #c2a661;
    background-color:#C0C0C0;

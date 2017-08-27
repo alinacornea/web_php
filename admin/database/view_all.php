@@ -47,7 +47,7 @@ include('../headers/admin_header.php'); ?>
     <td><?php echo $pro_price;?></td>
     <td><?php echo $pro_year;?></td>
     <td><?php echo $pro_quantity;?></td>
-    <td name="availability"><?php if($pro_active == 1 && $pro_quantity > 0){echo "<font color='green'>active</font>";}else {echo "<font color='red'>not active</font>";}?></td>
+    <td name="availability"><?php if($pro_quantity > 0){echo "<font color='green'>active</font>";}else {echo "<font color='red'>not active</font>";}?></td>
     <td><a href = "edit_product.php?edit_product=<?php echo $pro_id; ?>">Edit</a></td>
     <td><a href = "delete_product.php?delete_product=<?php echo $pro_id;?>">Delete</a></td>
   </tr>

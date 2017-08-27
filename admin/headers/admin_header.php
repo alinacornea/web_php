@@ -15,9 +15,9 @@
 <body style="background-color:white;">
     <header>
       <h1>
-        <a title="Home"href="<?php $login = $_GET['login']; echo ("http://localhost:8080/ecommerce/public/index.php?login=$login") ;?>"> <img id="home" src="http://localhost:8080/ecommerce/public/images/home.png" alt="Home"></a>
+        <a title="Home"href="<?php $login = $_GET['login']; echo ("http://localhost:8080/ecommerce/public/index.php?login=$login") ;?>"> <img id="home" src="http://localhost:8080/ecommerce/public/images/home1.png" alt="Home"></a>
         Vintage - Admin page
-        <a title="Logout" href="http://localhost:8080/ecommerce/admin/users/logout.php"><img id="logout" src="http://localhost:8080/ecommerce/public/images/logout.png" alt="Logout"></a>
+        <a title="Logout" href="http://localhost:8080/ecommerce/admin/users/logout.php"><img id="logout" src="http://localhost:8080/ecommerce/public/images/button.png" alt="Logout"></a>
       </h1>
     </header>
 

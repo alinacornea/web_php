@@ -2,11 +2,11 @@
 	require_once('../../shared/initialize.php');
 	include('../headers/admin_header.php');
 ?>
-<div style= "overflow-x:auto;">
-<link rel="stylesheet" type="text/css" href="../style_admin/view.css">
+<div style= "overflow-x:auto; width:100%;">
+<link rel="stylesheet" type="text/css" href="../style_admin/view_products.css">
 <table>
   <tr align = "center">
-    <td colspan = "9"><h2>Update a product</h2></td>
+    <td colspan = "10"><h2>Update a product</h2></td>
   </tr>
   <tr id="name">
     <td>Id</</td>

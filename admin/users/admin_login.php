@@ -3,7 +3,7 @@
 
 <html>
 <title>Log in </title>
-<link rel="stylesheet" media= "all" href = "../style_admin/login.css"/>
+<link rel="stylesheet" media= "all" href = "../style_admin/login1.css"/>
 <body>
   <div id="content">
   <p1 style="font-size:30px;">Admin account: </p1> <br/>

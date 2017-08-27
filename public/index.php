@@ -6,7 +6,7 @@
 
 <html lang="en">
 
-<link rel="stylesheet" href="front_style/index.css">
+<link rel="stylesheet" href="front_style/display.css">
 <head>
   <meta charset="utf-8">
   <title>Vintage - store </title>

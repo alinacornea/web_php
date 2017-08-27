@@ -41,9 +41,9 @@ if ($_POST['submit'] === "Add Admin")
 ?>
 <html>
 <title>Manage Users</title>
-<link rel="stylesheet" media= "all" href ="../style_admin/account_create.css"/>
+<link rel="stylesheet" media= "all" href ="../style_admin/register.css"/>
 <body>
-  <h2> Add a new admin:</h2>
+  <h3> Add a new admin:</h3>
     <form id="board"action="add_admin.php"method="post">
   	<div class="container">
     <label><b>First name</b></label>

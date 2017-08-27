@@ -37,7 +37,7 @@ if (isset($_POST['login']))
   {
       $_SESSION['login'] = $login;
       echo "<script>alert('$login, You logged in succesfully! Welcome')</script>";
-      echo "<script>window.open('../../public/index.php', '_self')</script>";
+      echo "<script>window.open('../../public/index.php?login=$login', '_self')</script>";
   }
   else
   {

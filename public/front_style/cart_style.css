@@ -1,0 +1,74 @@
+.table{
+      border-bottom: thin solid #c2a661;
+      float: center;
+      margin-top:30px;
+      width:80%;
+      background-image:url("../images/back1.jpg")
+}
+
+#info{
+  text-align:center;
+}
+
+#name{
+  text-align:center;
+  font-weight:bold;
+  font-size:20px;
+  text-shadow:2px 1px 0px #c2a661;
+
+}
+
+td{
+  border-bottom: thin solid #c2a661;
+}
+.image{
+  width:100px;
+  height:80px;
+}
+
+.no-click{
+  pointer-events: none;
+  background-color:#FFDAB9;
+  font-weight:bold;
+}
+.submit{
+  background-color:#FFEFD5;
+  font-weight:bold;
+}
+
+#price{
+  border:2px solid #c2a661;
+  height: 40px;
+  width:140px;
+  float:right;
+  margin:10px 10px 10px 10px;
+  font-weight:bold;
+  font-size:12px;
+}
+
+#buttom{
+  border:2px solid;
+  border-radius: 10px;
+  height: 50px;
+  width:160px;
+  float:right;
+  margin:10px 10px 10px 10px;
+  background-color:#CEAD00;
+  font-size:14px;
+}
+
+#delete{
+  width:30px;
+  height:30px;
+}
+.empty{
+  font-size:30px;
+  text-align:center;
+}
+
+/*
+.table .image:hover{
+  border:2px solid black;
+  height:200px;
+  width:200px;
+}*/

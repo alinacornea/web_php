@@ -1,33 +1,55 @@
 <?php
 session_start();
-require_once('../../shared/initialize.php');
+	require_once('../../shared/initialize.php');
+	$id = $_GET['id'];
+	global $login;
 
-$check_login = $_SESSION['login'];
-
-if ($_POST['submit'] === "Add to cart")
-{
-	
-	$check = mysqli_query($conn, "select * from $table where login='{$login}' and email='{$email}'");
+	$get_email = mysqli_query($conn, "select * from Users where login='{$login}'");
+	if(!$get_email){
+		echo "Error: " . $check . "<br>" . mysqli_error($conn);}
+	$check = mysqli_query($conn, "select * from Products where id='{$id}'");
+	if(!$check){
+		echo "Error: " . $check . "<br>" . mysqli_error($conn);}
 	$num = mysqli_num_rows($check);
-	if ($num > 0)
+
+	$i = 0;
+	while($var = mysqli_fetch_array($get_email)){
+		$email = $var['email'];
+		$i++;
+	}
+
+	$i = 0;
+	while ($row_pro = mysqli_fetch_array($check))
 	{
-			echo "<script>alert('$login, This admin already exists!')</script>";
-			echo "<script>window.open('add_admin.php', '_self')</script>";
+		$pro_id = $row_pro['id'];
+		$pro_title = $row_pro['title'];
+		$pro_cat = $row_pro['category'];
+		$pro_desc = $row_pro['description'];
+		$product_image = $row_pro['img_path'];
+		$pro_price = $row_pro['price'];
+		$pro_year = $row_pro['year'];
+		$pro_quantity += 1;
+		$stock = $row_pro['quantity'] - 1;
+		$pro_active = $row_pro['availability'];
+		$i++;
+	}
+	if ($stock == 0)
+	{
+			echo "<script> alert('$pro_title, is not available anymore!'); window.open('show_products.php?category=$pro_cat', '_self');</script>";
 			return;
 	}
 	else {
 		# code...
-		$insert_admin = "INSERT INTO $table(first_name, last_name, email, login, hash)
-		values('$first', '$last', '$email', '$login', '$hash')";
-		$insert = mysqli_query($conn, $insert_admin);
+		$insert_cart = "INSERT INTO Cart(id, email, login, title, category, description, img_path, price, quantity, max_stock, year)
+		values('$pro_id', '$email', '$login', '$pro_title', '$pro_cat', '$pro_desc', '$product_image', '$pro_price', '$pro_quantity', '$stock', '$pro_year')";
+		$insert = mysqli_query($conn, $insert_cart);
 		if ($insert){
-			echo "<script>alert('Adding '$login' as admin was succesfully done!')</script>";
-			echo "<script>window.open('view_admins.php?login=$check_login', '_self')</script>";
+			echo "<script>alert('Adding \"$pro_title\" into your cart!')</script>";
+			echo "<script> window.open('show_products.php?category=$pro_cat', '_self')</script>";
 		}
 		else {
 			echo "Error: " . $insert . "<br>" . mysqli_error($conn);
 		}
 	}
-}
 
 ?>
