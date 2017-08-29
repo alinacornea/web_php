@@ -1,5 +1,7 @@
 <?php
-include('../headers/admin_header.php'); ?>
+session_start();
+include('../headers/admin_header.php');
+include ("../../shared/initialize.php");
 ?>
 <div style= "overflow-x:auto;">
 <link rel="stylesheet" type="text/css" href="../style_admin/users.css">
@@ -18,8 +20,7 @@ include('../headers/admin_header.php'); ?>
     <td></td>
   </tr>
   <?php
-    include ("../../shared/initialize.php");
-    $login = $_GET['login'];
+    $login = $_SESSION[login];
     $get_admin = "select * from Admins";
     $run_admin = mysqli_query($conn, $get_admin);
     $i = 0;
@@ -39,12 +40,12 @@ include('../headers/admin_header.php'); ?>
     <td colspan="3"><?php echo $admin_email;?></td>
     <td><?php echo $admin_login;?></td>
     <td><?php if($login== $admin_login) {echo "<font color='green'>active</font>";} else{echo "<font color='red'>not active</font>";}?></td>
-    <td><a href = "modify_admin.php?modify_admin=<?php echo $admin_id;?>?login=<?php echo $login;?>">Edit Admin</a></td>
-    <td><a href = "delete_admin.php?delete_admin=<?php echo $admin_id;?>?login=<?php echo $login;?>">Delete Admin</a></td>
+    <td><a href = "modify_admin.php?modify_admin=<?php echo $admin_id;?>">Edit Admin</a></td>
+    <td><a href = "delete_admin.php?delete_admin=<?php echo $admin_id;?>">Delete Admin</a></td>
   </tr>
 <?php } ?>
 </table>
 <div>
 <?php
-  include('../headers/admin_footer.php'); ?>
+  include('../headers/admin_footer.php');
 ?>
