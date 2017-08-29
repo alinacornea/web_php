@@ -1,0 +1,63 @@
+
+
+body{
+  background-image: url(../images/grey.jpg);
+}
+
+.text {
+  fill: url(#gr-radial);
+}
+svg {
+  position: relative;
+  height: 100%;
+}
+
+h1 {
+  background-image: url("../images/admin1.jpg");
+  margin: -6px -6px 7px; -6px ;
+  font-size: 55px;
+  height:70px;
+  padding:30px;
+  text-align:center;
+  font-family: "Acme";
+
+}
+
+#home{
+ float: left;
+ padding: 5px;
+ width:90px;
+ height:60px;
+ margin-left:-20px;
+}
+
+#cart{
+  float: right;
+  padding: 15px;
+  width:60px;
+  margin-right:-18px;
+  height:50px;
+}
+
+#admin{
+  float: right;
+  padding: 20px;
+  width:40px;
+  margin-right:-18px;
+  height:40px;
+}
+
+#logout{
+  float: right;
+  margin-right:-18px;
+  padding: 20px;
+  width:40px;
+  height:40px;
+}
+#login{
+  float: right;
+  margin-right:-18px;
+  padding: 20px;
+  width:90px;
+  height:40px;
+}

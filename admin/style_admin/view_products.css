@@ -1,0 +1,46 @@
+table{
+   width:100%;
+   align:center;
+   background-color: #808080;
+   border: 1px solid black;
+   margin: 0;
+   padding: 0;
+   margin-bottom:0;
+}
+
+h2{
+   font-size:15px;
+   height:5px;
+}
+
+table td{
+  padding: .625em;
+  text-align: center;
+}
+
+#name{
+ text-align:center;
+ background-color:#A8C7D6;
+ font-weight:bold;
+ font-size:13px;
+}
+
+#info{
+  background-color:#A9A9A9;
+  align:center;
+  font-size:12px;
+  text-align:center;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+p{
+  color:black;
+  font-size:12px;
+  font-style:italic;
+  font-weight:bold;
+}
+
+form{
+  position:relative;
+}

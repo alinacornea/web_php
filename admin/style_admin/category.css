@@ -1,0 +1,28 @@
+table{
+  width:825px;
+  height:200px;
+  background-color:grey;
+  border:5;
+}
+
+input[type="text"]{
+   font-size: 15pt;
+   height: 30px;
+   width:150px;
+   text-align:center;
+}
+
+input[type="submit"]{
+font-size: 12pt;
+height: 30px;
+font-weight:bold;
+padding:5px 15px;
+border: solid 1px #000000;
+cursor:pointer;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+
+h2{
+  font-family:"Lucida Console", Monaco, monospace;
+}
